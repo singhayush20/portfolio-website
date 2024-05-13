@@ -1,17 +1,18 @@
 const styles = {
-    paddingX: "sm:px-16 px-6",
-    paddingY: "sm:py-16 py-6",
-    padding: "sm:px-16 px-6 sm:py-16 py-10",
-  
-    heroHeadText:
-      "font-black text-white lg:text-[75px] sm:text-[60px] md:text-[50px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2",
-    heroSubText:
-      "text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[30px] xs:text-[20px] text-[16px] lg:leading-[40px]",
-  
-    sectionHeadText:
-      "text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",
-    sectionSubText:
-      "sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider",
-  };
-  
-  export { styles };
+  paddingX: "sm:px-16 px-6",
+  paddingY: "sm:py-16 py-6",
+  padding: "sm:px-16 px-6 sm:py-16 py-10",
+
+  heroHeadText:
+    "font-black text-white lg:text-[75px] sm:text-[60px] md:text-[45px] xs:text-[45px] text-[40px] lg:leading-[98px] mt-2",
+  heroSubText:
+    "text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[30px] xs:text-[20px] text-[16px] lg:leading-[40px]",
+
+  sectionHeadText:
+    "text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",
+  sectionSubText:
+    "sm:text-[18px] text-[14px] text-secondary text-white font-bold uppercase tracking-wider",
+  textGradientHero: "bg-gradient-to-r from-[#915eff] to-[#1275bc] text-transparent bg-clip-text font-bold" 
+};
+
+export { styles };

@@ -18,8 +18,11 @@ module.exports = {
       screens: {
         xs: "450px",
       },
+
       backgroundImage: {
         "hero-pattern": "url('/src/assets/herobg.png')",
+        'spotlight': 'radial-gradient(circle, #090325 0%, #090325 30%, #151030 70%, #151030 100%)',
+        'overlay': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9))',
       },
     },
   },

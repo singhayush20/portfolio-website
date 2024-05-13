@@ -1,6 +1,5 @@
-import React from 'react'
-
-const Ball = () => {
+import React, {} from 'react'
+const Ball = (props) => {
   return (
     <div>Ball</div>
   )
