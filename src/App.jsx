@@ -6,13 +6,13 @@ function App() {
     <BrowserRouter>
       <div className='bg-primary relative'>
         <div className='bg-hero-pattern bg-scale-down bg-repeat bg-center'>
+          <Navbar />
+          <Hero />
+          <About />
+          <Experience />
+          <Tech />
+          <Works />
           <div className='relative z-0'>
-            <Navbar />
-            <Hero />
-            <About />
-            <Experience />
-            <Tech />
-            <Works />
             <Blog />
             <Contact />
             <StarsCanvas />

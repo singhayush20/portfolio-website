@@ -4,6 +4,8 @@ import { styles } from '../styles/style'
 import { profile } from '../assets'
 import { TypeAnimation } from 'react-type-animation';
 const Hero = () => {
+
+  
   return (
     <section className='w-full relative bg-no-repeat bg-center pt-20 md:pt-32'>
       <div className=' flex flex-col md:flex-row justify-evenly items-center md:mx-auto'>
@@ -14,7 +16,6 @@ const Hero = () => {
           </div>
           <div>
             <h1 className={`${styles.heroHeadText} text-white md:`}>
-              {/* <span className={`text-[#915eff] `}>Ayush.</span> */}
               <TypeAnimation
                 preRenderFirstString={false}
 
