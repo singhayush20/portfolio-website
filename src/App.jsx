@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
-import { About, Contact, Experience, Hero, Feedbacks, Navbar, Tech, Works, StarsCanvas } from './components';
+import { About, Contact, Experience, Hero, Blog, Navbar, Tech, Works, StarsCanvas } from './components';
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
               <Experience />
               <Tech />
               <Works />
+              <Blog />
             </div>
             <div className='relative z-0'>
               <Contact />

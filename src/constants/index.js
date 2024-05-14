@@ -1,7 +1,5 @@
 import * as Icons from '../assets'
-import project_backend from '../assets/project_backend.png';
-import project_frontend from '../assets/project_frontend.png';
-import project_mobile from '../assets/project_mobile.png';
+
 
 export const navLinks = [
   {
@@ -16,6 +14,10 @@ export const navLinks = [
     id: "contact",
     title: "Contact",
   },
+  {
+    id: "blog",
+    title: "Blogs",
+  }
 ];
 
 const services = [
@@ -137,6 +139,40 @@ const technologies = [
 ];
 
 
+const blogs = [
+  {
+    name: "Decoding Decoding Design Patterns in Java",
+    link: "https://medium.com/@aprayush20/decoding-design-patterns-in-java-0b5391deba50",
+    image: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*-5yRYx7dxq7A0iB0JPBwHA.png',
+    description: "In the realm of Java development, we frequently encounter terms such as factory, singleton, observer, MVC, and more. Understanding the essence of these concepts is paramount as it directly impacts the quality of our code."
+  },
+  {
+    name: "Spring Security Demystified",
+    link: "https://medium.com/@aprayush20/spring-security-authentication-configuration-demystified-e44be02322fb",
+    image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*98AWkl_TOIK3JPJUV5oPMg.png",
+    description: "In this article I will demonstrate how we can integrate Spring Security in a Spring Boot Application. I will be focusing on configuring different components, focusing mainly on Authentication using username and password."
+  },
+  {
+    name: "AOP and Proxy Design Pattern in Spring Boot",
+    link: "https://blog.stackademic.com/aop-and-proxy-design-pattern-in-spring-boot-d0e360783651",
+    image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*qoNvecYQyD7y3_501i07_Q.png",
+    description: "Aspect Oriented Programming or AOP is an important component of Spring Framework. In order to understand the internal workings, it is essential to have a clear understanding of AOP and Proxy Design Pattern."
+  },
+  {
+    name: "Understanding Spring Data JPA & JPQL",
+    link: "https://medium.com/@aprayush20/spring-data-jpa-with-spring-boot-9e3b261e4cc7",
+    image: "https://miro.medium.com/v2/resize:fit:640/format:webp/1*-u5aLfuU7XhtUUZDbs2G3A.png",
+    description: "Spring Data JPA is a popular for data access that helps to write data access/persistence logic with less code. Spring Data JPA is a level of abstraction over JPA that reduces the amount of code we write and can be used to write logic efficiently using JPA based repositories."
+  },
+  {
+    name: "Spring Security Authentication Flow",
+    link: "https://medium.com/@aprayush20/understanding-spring-security-authentication-flow-f9bb545bd77",
+    image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*hzJ_weQaqZf0oHtbWYFpIw.png",
+    description: "Spring Security is a powerful framework which can be used to secure Spring applications. It focuses on both authentication and authorization. It can be configured and customized to meet own demands. In this article we’ll be discussing different components which are used in authentication."
+  }
+]
+
+
 const experiences = [
   {
     title: "Backend Developer",
@@ -225,15 +261,15 @@ const projects = [
     source_links: [
       {
         link: 'https://github.com/singhayush20/cacmp_frontend',
-        icon: project_frontend
+        icon: Icons.project_frontend
       },
       {
         link: 'https://github.com/singhayush20/cacmp_backend',
-        icon: project_backend
+        icon: Icons.project_backend
       },
       {
         link: 'https://github.com/singhayush20/cacmp_app',
-        icon: project_mobile
+        icon: Icons.project_mobile
       }
     ]
   },
@@ -259,11 +295,11 @@ const projects = [
     source_links: [
       {
         link: 'https://github.com/singhayush20/blogging-application',
-        icon: project_backend
+        icon: Icons.project_backend
       },
       {
         link: 'https://github.com/singhayush20/blog_app',
-        icon: project_mobile
+        icon: Icons.project_mobile
       },
     ]
   },
@@ -289,14 +325,41 @@ const projects = [
     source_links: [
       {
         link: 'https://github.com/singhayush20/assessment-portal',
-        icon: project_backend
+        icon: Icons.project_backend
       },
       {
         link: 'https://github.com/singhayush20/Assessment-Portal-App',
-        icon: project_mobile
+        icon: Icons.project_mobile
       }
     ]
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+
+const socials = [
+  {
+    name: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/ayush-singh-321887201',
+    icon: Icons.linkedin
+  },
+  {
+    name: 'GitHub',
+    link: 'https://github.com/singhayush20',
+    icon: Icons.git,
+  },
+  {
+    name: 'X',
+    link: 'https://x.com/__ayushSingh20?t=pqctO7IqaRygbL6dQA9FUw&s=09',
+    icon: Icons.x,
+  },
+  {
+    name: 'Medium',
+    link: 'https://medium.com/@aprayush20',
+    icon: Icons.medium
+  }
+]
+
+const email = "ayushsingh20april@gmail.com"
+const resumeLink = "https://drive.google.com/drive/folders/1DQTRmbh-PqOSv_r6LMoLstIKVwn7aQXL?usp=sharing"
+const mediumProfile = "https://medium.com/@aprayush20"
+export { socials, services, technologies, experiences, testimonials, projects, email, mediumProfile, resumeLink, blogs };

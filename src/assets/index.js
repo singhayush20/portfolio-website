@@ -40,6 +40,16 @@ import springboot from './tech/springboot.png';
 import swagger from './tech/swagger.png';
 import redis from './tech/redis.svg';
 import postman from './tech/postman.svg';
+import project_frontend from './project_frontend.png'
+import project_backend from './project_backend.png'
+import project_mobile from './project_mobile.png'
+import git from './github.svg'
+import linkedin from './linkedin.svg'
+import x from './x.jpeg'
+import medium from './medium.svg'
+import copy from './copy.png'
+import link from './link.png'
+import blog from './blog.jpg'
 export {
   android,
   aws,
@@ -64,11 +74,13 @@ export {
   mobile,
   web,
   github,
+  link,
   menu,
   frontend, //-overview section
   close,
   css,
   docker,
+  blog,
   html,
   javascript,
   mongodb,
@@ -83,4 +95,12 @@ export {
   backend2, //-overview section
   work1, //-experience section
   work2, //-experience section
+  x,
+  git,
+  medium,
+  linkedin,
+  project_backend,
+  project_frontend,
+  project_mobile,
+  copy
 };

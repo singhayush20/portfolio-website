@@ -12,8 +12,6 @@ const ProjectCard = ({
   name,
   description,
   tags,
-  image,
-  // source_code_link,
   source_links,
 }) => {
   return (
