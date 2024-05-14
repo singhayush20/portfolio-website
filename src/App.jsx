@@ -5,21 +5,19 @@ function App() {
   return (
     <BrowserRouter>
       <div className='bg-primary relative'>
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+        <div className='bg-hero-pattern bg-scale-down bg-repeat bg-center'>
+          <div className='relative z-0'>
             <Navbar />
             <Hero />
-            <div>
-              <About />
-              <Experience />
-              <Tech />
-              <Works />
-              <Blog />
-            </div>
-            <div className='relative z-0'>
-              <Contact />
-              <StarsCanvas />
-            </div>
+            <About />
+            <Experience />
+            <Tech />
+            <Works />
+            <Blog />
+            <Contact />
+            <StarsCanvas />
           </div>
+        </div>
       </div>
     </BrowserRouter>
   )

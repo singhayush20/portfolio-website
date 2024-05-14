@@ -39,7 +39,7 @@ const About = () => {
         A committed and self-driven learner, passionate about technology. A team player who can work collaboratively to fulfill common objectives.
         Proficient in Backend Development using Spring Boot and Java, with hands-on experience in mobile app development using Flutter and frontend development using React JS.
       </motion.p>
-      <div className='mt-20 flex flex-wrap flex-col justify-center items-center md:flex-row gap-10 '>
+      <div className='mt-20 flex flex-wrap flex-col justify-center items-center md:flex-row gap-10 bg-opacity-80 bg-[#121729] rounded-2xl py-10'>
         {
           services.map((service, index) => {
             return (<ServiceCard key={service.title} index={index} {...service} />)

@@ -16,7 +16,7 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}
-      className=' w-[95%] sm:w-[75%] bg-[#1B133D] md:w-[80%] rounded-2xl p-1'>
+      className=' w-[95%] sm:w-[75%] bg-[#121729] bg-opacity-85 md:w-[80%] rounded-2xl p-1'>
       <Tilt
         options={{
           max: 45,
@@ -96,7 +96,7 @@ const Works = () => {
           Following are some projects which I have developed during my B.Tech journey.
         </motion.p>
       </div>
-      <div className='mt-20 flex flex-wrap items-center justify-center gap-7'>
+      <div className='mt-20 flex flex-wrap items-center justify-center gap-7 bg-opacity-80 bg-[#101525] py-10 rounded-2xl'>
         {
           projects.map((project, index) => {
             return (

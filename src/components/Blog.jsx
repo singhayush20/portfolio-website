@@ -5,7 +5,6 @@ import { styles } from '../styles/style';
 import { SectionWrapper } from '../higher_order_component';
 import { blogs, mediumProfile } from '../constants';
 import { fadeIn, zoomIn, textVariant } from '../motion';
-import { blog } from '../assets';
 
 const ArticleCard = ({ index, name, link, description, image }) => {
     return (

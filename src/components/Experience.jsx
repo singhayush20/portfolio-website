@@ -45,7 +45,7 @@ const Experience = () => {
         <p className={`${styles.sectionSubText}`}>What I have done so far</p>
         <h2 className={`${styles.sectionHeadText}`}>Work Experience</h2>
       </motion.div>
-      <div className='mt-20 flex flex-col'>
+      <div className='mt-20 flex flex-col bg-opacity-80 bg-[#131220] py-10 rounded-2xl'>
         <VerticalTimeline>
           {experiences.map((experience, index) => {
             return (
@@ -58,4 +58,4 @@ const Experience = () => {
   )
 }
 
-export default SectionWrapper(Experience, "work");
+export default SectionWrapper(Experience, "experience");

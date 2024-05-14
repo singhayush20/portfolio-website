@@ -1,8 +1,4 @@
 import logo from "./logo.svg";
-import backend from "./backend.png";
-import creator from "./creator.png";
-import mobile from "./mobile.png";
-import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
@@ -17,9 +13,6 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import backend2 from "./backed2.png";
 import app_development from './app-development.png';
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
 import frontend from './frontend.png';
 import work1 from './work1.png';
 import work2 from './work2.png'
@@ -49,7 +42,6 @@ import x from './x.jpeg'
 import medium from './medium.svg'
 import copy from './copy.png'
 import link from './link.png'
-import blog from './blog.jpg'
 export {
   android,
   aws,
@@ -69,10 +61,6 @@ export {
   redis,
   postman,
   logo,
-  backend,
-  creator,
-  mobile,
-  web,
   github,
   link,
   menu,
@@ -80,16 +68,12 @@ export {
   close,
   css,
   docker,
-  blog,
   html,
   javascript,
   mongodb,
   reactjs,
   redux,
   tailwind,
-  carrent,
-  jobit,
-  tripguide,
   profile,
   app_development, //-overview section
   backend2, //-overview section
