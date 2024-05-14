@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { styles } from '../styles/style';
-import { navLinks } from '../constants/index'
-import { logo, menu, close } from '../assets'
+import { navLinks } from '../constants/index';
+import { logo, menu, close } from '../assets';
 
 const Navbar = () => {
-  const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const [active, setActive] = useState("");
   return (
-    <nav className={`${styles.paddingX} w-full flex items-center py-5 bg-primary`}>
+    <nav className='fixed top-0 w-full flex items-center px-5 py-5 z-50 bg-primary'>
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link to="/" className='flex items-center gap-2'
           onClick={() => {
@@ -47,7 +46,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

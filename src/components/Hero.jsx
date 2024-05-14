@@ -5,7 +5,7 @@ import { profile } from '../assets'
 import { TypeAnimation } from 'react-type-animation';
 const Hero = () => {
   return (
-    <section className='w-full mx-auto mt-24'>
+    <section className='w-full relative bg-no-repeat bg-center pt-20 md:pt-32'>
       <div className=' flex flex-col md:flex-row justify-evenly items-center md:mx-auto'>
         <div className={` md:w-[60%] w-[100%] inset-0 max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
           <div className='flex flex-col justify-center items-center mt-5'>
