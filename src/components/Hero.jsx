@@ -43,9 +43,9 @@ const Hero = () => {
             </p>
           </div>
         </div>
-        <div className='md:w-[40%] w-[100%]'>
+        <div className='md:w-[40%] w-[100%] flex justify-center items-center'>
       
-            <img src={profile} alt='Your Image' className='ml-10 rounded-full shadow-md w-60 h-60 lg:w-80 lg:h-80 bg-gradient-to-r blue-green-purple-gradient px-1 py-1 cursor-pointer ' />
+            <img src={profile} alt='Your Image' className=' rounded-full shadow-md w-60 h-60 lg:w-80 lg:h-80 bg-gradient-to-r blue-green-purple-gradient px-1 py-1 cursor-pointer ' />
           
 
         </div>

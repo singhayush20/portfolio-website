@@ -1,4 +1,7 @@
 import * as Icons from '../assets'
+import project_backend from '../assets/project_backend.png';
+import project_frontend from '../assets/project_frontend.png';
+import project_mobile from '../assets/project_mobile.png';
 
 export const navLinks = [
   {
@@ -219,7 +222,20 @@ const projects = [
       },
     ],
     image: Icons.carrent,
-    source_code_link: "https://github.com/",
+    source_links: [
+      {
+        link: 'https://github.com/singhayush20/cacmp_frontend',
+        icon: project_frontend
+      },
+      {
+        link: 'https://github.com/singhayush20/cacmp_backend',
+        icon: project_backend
+      },
+      {
+        link: 'https://github.com/singhayush20/cacmp_app',
+        icon: project_mobile
+      }
+    ]
   },
   {
     name: "Connect",
@@ -240,7 +256,16 @@ const projects = [
       }
     ],
     image: Icons.jobit,
-    source_code_link: "https://github.com/",
+    source_links: [
+      {
+        link: 'https://github.com/singhayush20/blogging-application',
+        icon: project_backend
+      },
+      {
+        link: 'https://github.com/singhayush20/blog_app',
+        icon: project_mobile
+      },
+    ]
   },
   {
     name: "Quizzo",
@@ -261,7 +286,16 @@ const projects = [
       }
     ],
     image: Icons.tripguide,
-    source_code_link: "https://github.com/",
+    source_links: [
+      {
+        link: 'https://github.com/singhayush20/assessment-portal',
+        icon: project_backend
+      },
+      {
+        link: 'https://github.com/singhayush20/Assessment-Portal-App',
+        icon: project_mobile
+      }
+    ]
   },
 ];
 
