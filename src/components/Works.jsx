@@ -93,7 +93,7 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
         >
-          Following are some projects which I have developed during my B.Tech journey.
+          Line up of projects I have developed, during my journey.
         </motion.p>
       </div>
       <div className='mt-20 flex flex-wrap items-center justify-center gap-7 bg-opacity-80 bg-[#101525] py-10 rounded-2xl'>

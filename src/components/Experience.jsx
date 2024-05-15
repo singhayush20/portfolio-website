@@ -42,9 +42,17 @@ const Experience = () => {
     <div>
       <motion.div
         variants={textVariant()}>
-        <p className={`${styles.sectionSubText}`}>What I have done so far</p>
+        <p className={`${styles.sectionSubText}`}>Real-world projects</p>
         <h2 className={`${styles.sectionHeadText}`}>Work Experience</h2>
       </motion.div>
+      <div className='w-full flex'>
+        <motion.p
+          variants={textVariant()}
+          className='mt-3 text-secondary text-[17px] max-w-full leading-[30px]'
+        >
+          Real world projects have helped me in strengthening my skillset and showcasing my expertise.
+        </motion.p>
+      </div>
       <div className='mt-20 flex flex-col bg-opacity-80 bg-[#131220] py-10 rounded-2xl'>
         <VerticalTimeline>
           {experiences.map((experience, index) => {

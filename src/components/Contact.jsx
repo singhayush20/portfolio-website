@@ -70,7 +70,6 @@ const Contact = () => {
     }
     else {
       setLoading(true);
-
       emailjs
         .send(
           import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
@@ -79,7 +78,6 @@ const Contact = () => {
             from_name: form.name.trim() ?? '[Name]',
             to_name: "Ayush Singh",
             from_email: form.email,
-            to_email: import.meta.env.VITE_APP_EMAIL_ID,
             message: form.message,
           },
           import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
@@ -140,7 +138,7 @@ const Contact = () => {
               name='email'
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your web address?"
+              placeholder="Eg: ayushsingh20april@gmail.com"
               className='bg-tertiary bg-opacity-50 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
@@ -151,7 +149,7 @@ const Contact = () => {
               name='message'
               value={form.message}
               onChange={handleChange}
-              placeholder='What you want to say?'
+              placeholder='Write a message for me.'
               className='bg-tertiary bg-opacity-50 py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>

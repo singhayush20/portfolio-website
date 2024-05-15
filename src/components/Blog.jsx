@@ -46,9 +46,9 @@ const Blog = () => {
             <div className='w-full flex'>
                 <motion.p
                     variants={fadeIn("", "", 0.1, 1)}
-                    className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
+                    className='mt-3 text-secondary text-[17px] max-w-full leading-[30px]'
                 >
-                    Below are some articles written by me. To view all, find me on  <a href={mediumProfile} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 hover:underline transition-colors duration-300 ">Medium</a>.
+                    Explore my array of tech articles. Dive in for a deeper read. To view all, find me on  <a href={mediumProfile} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 hover:underline transition-colors duration-300 ">Medium</a>.
                 </motion.p>
             </div>
             <div className='mt-20 flex flex-wrap justify-center gap-7'>

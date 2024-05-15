@@ -31,6 +31,12 @@ const Tech = () => {
         <p className={`${styles.sectionSubText}`}>My Skills</p>
         <h2 className={`${styles.sectionHeadText}`}>Tools and Technologies</h2>
       </motion.div>
+      <motion.p
+        variants={textVariant()}
+        className='mt-3 text-secondary text-[17px] max-w-full leading-[30px]'
+      >
+        I'm driven by curiosity and thrive on exploring the world of technology.
+      </motion.p>
       <div className='mt-10 flex flex-row flex-wrap md:gap-10 gap-5 items-center justify-center'>
         {technologies.map((tech, index) => (
           <TechCard key={tech.name} tech={tech} index={index} />

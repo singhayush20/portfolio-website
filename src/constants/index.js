@@ -8,7 +8,7 @@ export const navLinks = [
   },
   {
     id: "experience",
-    title: "Work",
+    title: "Experience",
   },
   {
     id: "tech",
@@ -190,7 +190,7 @@ const experiences = [
     date: "June 2023 - December 2023 (7 Months)",
     points: [
       "Leveraged Spring Boot, Spring Data JPA, and MySQL Database to develop a suite of REST APIs related to admin, company, and customer functionalities for an insurance platform, based in the USA. Integrated JSON Web Token (JWT) using Spring Security to secure REST APIs.",
-      "Developed and implemented features like a basic chatbot, admin dashboards, and dynamic workflows for company-user interaction",
+      "Developed and implemented features like a basic chatbot, admin dashboards, and dynamic workflows for company-user interaction.",
       "Managed application deployment with CI/CD on AWS using Elastic Beanstalk, Relational Database Service, AWS Certificate Manager, AWS Code Pipeline, and GitHub.",
     ],
   },
@@ -201,7 +201,7 @@ const experiences = [
     iconBg: "#cec8c8",
     date: "May 2023 - July 2023 (3 Months)",
     points: [
-      "Worked in association on E-content Creation and Curation, gaining insights into creating PowerPoint presentations, incorporating voiceovers, and images with 2D & 3D animations, and creating SCORM compiled package using iSpring Suite",
+      "Worked in association on E-content Creation and Curation, gaining insights into creating PowerPoint presentations, incorporating voiceovers, and images with 2D & 3D animations, and creating SCORM compiled package using iSpring Suite.",
       "Leveraged Spring Boot, Spring Data JPA, Spring Security, and MySQL to develop REST APIs based on product requirements."
     ],
   },
