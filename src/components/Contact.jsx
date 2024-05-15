@@ -108,10 +108,11 @@ const Contact = () => {
     <div
       className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
     >
-      <motion.div
+      {/* <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className='flex-[0.5] bg-[#131220] bg-opacity-80 py-10 rounded-2xl p-8 max-w-[600px]'
-      >
+      > */}
+      <div className="flex-[0.5] bg-[#131220] bg-opacity-80 py-10 rounded-2xl p-8 max-w-[600px]">
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Send an Email</h3>
 
@@ -166,12 +167,14 @@ const Contact = () => {
             </p>}
           </div>
         </form>
-      </motion.div>
+      </div>
+      {/* </motion.div> */}
 
-      <motion.div
+      {/* <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
         className='flex-[0.5] p-8  max-w-[600px] bg-opacity-80 bg-[#131220] py-10 rounded-2xl'
-      >
+      > */}
+      <div className='flex-[0.5] p-8  max-w-[600px] bg-opacity-80 bg-[#131220] py-10 rounded-2xl'>
         <p className={styles.sectionSubText}>Want to know more</p>
         <h3 className={styles.sectionHeadText}>Connect.</h3>
         <div className='mt-12 flex flex-col gap-8'>
@@ -207,7 +210,8 @@ const Contact = () => {
 
           </div>
         </div>
-      </motion.div>
+      </div>
+      {/* </motion.div> */}
     </div>
   );
 };
