@@ -12,8 +12,8 @@ function App() {
           <Experience />
           <Tech />
           <Works />
+          <Blog />
           <div className='relative z-0'>
-            <Blog />
             <Contact />
             <StarsCanvas />
           </div>
