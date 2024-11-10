@@ -191,7 +191,7 @@ const experiences = [
   {
     title: "Flutter Mobile Application Development Intern",
     company_name: "Refyne India",
-    icon: Icons.work1,
+    icon: Icons.work2,
     iconBg: "#383E56",
     date: "June 2024 - Present",
     points: [
