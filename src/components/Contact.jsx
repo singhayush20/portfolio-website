@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { socials, email, resumeLink } from '../constants'
 import { styles } from '../styles/style'
@@ -108,10 +107,6 @@ const Contact = () => {
     <div
       className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
     >
-      {/* <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
-        className='flex-[0.5] bg-[#131220] bg-opacity-80 py-10 rounded-2xl p-8 max-w-[600px]'
-      > */}
       <div className="flex-[0.5] bg-[#131220] bg-opacity-80 py-10 rounded-2xl p-8 max-w-[600px]">
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Send an Email</h3>
@@ -168,12 +163,6 @@ const Contact = () => {
           </div>
         </form>
       </div>
-      {/* </motion.div> */}
-
-      {/* <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className='flex-[0.5] p-8  max-w-[600px] bg-opacity-80 bg-[#131220] py-10 rounded-2xl'
-      > */}
       <div className='flex-[0.5] p-8  max-w-[600px] bg-opacity-80 bg-[#131220] py-10 rounded-2xl'>
         <p className={styles.sectionSubText}>Want to know more</p>
         <h3 className={styles.sectionHeadText}>Connect.</h3>
@@ -194,7 +183,6 @@ const Contact = () => {
                   return (
                     <div className="dark-blue-purple-gradient2 p-2 rounded-2xl cursor-pointer" key={`social-${handle.name}`}>
                       <img src={handle.icon} alt={handle.name} onClick={() => window.open(handle.link, "_blank")} width={'50px'} />
-
                     </div>
                   )
                 })}
@@ -203,7 +191,7 @@ const Contact = () => {
           <div>
             <h3 className="sm:text-3xl text-2xl font-bold">Resume</h3>
             <div className="flex flex-row flex-wrap gap-2 justify-start items-center">
-              <a href="https://drive.google.com/drive/folders/1DQTRmbh-PqOSv_r6LMoLstIKVwn7aQXL?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 hover:underline transition-colors duration-300 ">View My Resume</a>
+              <a href={resumeLink} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 hover:underline transition-colors duration-300 ">View My Resume</a>
               <img src={link} alt="link" width={"24px"} onClick={copyResumeToClipboard} />
               {resumeCopied && <span style={{ marginLeft: '5px' }}>Copied!</span>}
             </div>
