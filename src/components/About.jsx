@@ -36,8 +36,7 @@ const About = () => {
       <motion.p
         className='mt-2 text-white italic font-bold text-[17px] max-w-full leading-[30px]'
         variants={fadeIn("", "", 0.1, 1)}>
-        A committed and self-driven learner, passionate about technology. A team player who can work collaboratively to fulfill common objectives.
-        Proficient in Backend Development using Spring Boot and Java, with hands-on experience in mobile app development using Flutter and frontend development using React JS.
+        A committed, self-driven learner with a passion for technology. A collaborative team player who excels in working toward shared goals. Experienced in backend development with Spring Boot and Java, currently working on Flutter mobile application development.
       </motion.p>
       <div className='mt-20 flex flex-wrap flex-col justify-center items-center md:flex-row gap-10 bg-opacity-80 bg-[#121729] rounded-2xl py-10'>
         {
