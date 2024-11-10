@@ -149,16 +149,22 @@ const technologies = [
 
 const blogs = [
   {
-    name: "Decoding Decoding Design Patterns in Java",
-    link: "https://medium.com/@aprayush20/decoding-design-patterns-in-java-0b5391deba50",
-    image: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*-5yRYx7dxq7A0iB0JPBwHA.png',
-    description: "In the realm of Java development, we frequently encounter terms such as factory, singleton, observer, MVC, and more. Understanding the essence of these concepts is paramount as it directly impacts the quality of our code."
+    name: "Behavioral Design Patterns with Dart- 01",
+    link: "https://medium.com/@aprayush20/understanding-design-patterns-with-dart-01-chain-of-responsibility-command-pattern-b93da4ea9231",
+    image: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Cng3JlN_fmXdCe9cabEJQw.jpeg',
+    description: "Design patterns provide proven strategies to tackle common software challenges in a structured and efficient way. In this article, we will explore key design patterns and how they can be applied using Dart."
   },
   {
-    name: "Spring Security Demystified",
-    link: "https://medium.com/@aprayush20/spring-security-authentication-configuration-demystified-e44be02322fb",
-    image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*98AWkl_TOIK3JPJUV5oPMg.png",
-    description: "In this article I will demonstrate how we can integrate Spring Security in a Spring Boot Application. I will be focusing on configuring different components, focusing mainly on Authentication using username and password."
+    name: "Creational Design Patterns with Dart- 01",
+    link: "https://medium.com/@aprayush20/understanding-design-patterns-with-dart-creational-design-patterns-2c66cff85cf7",
+    image: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*LDgKMJBUFS2Qfc9YyBMQ4w.jpeg',
+    description: "Creational Design Patterns in software engineering deal with object creation mechanisms. They aim to increase flexibility and reuse by decoupling the client from the instantiation process."
+  },
+  {
+    name: "Structural Design Patterns with Dart- 01",
+    link: "https://medium.com/@aprayush20/understanding-design-patterns-with-dart-structural-design-patterns-01-c5bc17cccdc6",
+    image: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*RuCwxt6IO4s6mStD_2gVkA.jpeg',
+    description: "Structural Design Patterns are design patterns that focus on how objects and classes are composed to form larger structures while ensuring the flexibility and efficiency of those structures."
   },
   {
     name: "AOP and Proxy Design Pattern in Spring Boot",
@@ -173,15 +179,28 @@ const blogs = [
     description: "Spring Data JPA is a popular for data access that helps to write data access/persistence logic with less code. Spring Data JPA is a level of abstraction over JPA that reduces the amount of code we write and can be used to write logic efficiently using JPA based repositories."
   },
   {
-    name: "Spring Security Authentication Flow",
-    link: "https://medium.com/@aprayush20/understanding-spring-security-authentication-flow-f9bb545bd77",
-    image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*hzJ_weQaqZf0oHtbWYFpIw.png",
-    description: "Spring Security is a powerful framework which can be used to secure Spring applications. It focuses on both authentication and authorization. It can be configured and customized to meet own demands. In this article we’ll be discussing different components which are used in authentication."
-  }
+    name: "Spring Security Demystified",
+    link: "https://medium.com/@aprayush20/spring-security-authentication-configuration-demystified-e44be02322fb",
+    image: "https://miro.medium.com/v2/resize:fit:828/format:webp/0*ZnR3y4tuYO95rAkT",
+    description: "In this article I will demonstrate how we can integrate Spring Security in a Spring Boot Application. I will be focusing on configuring different components, focusing mainly on Authentication using username and password."
+  },
 ]
 
 
 const experiences = [
+  {
+    title: "Flutter Mobile Application Development Intern",
+    company_name: "Refyne India",
+    icon: Icons.work1,
+    iconBg: "#383E56",
+    date: "June 2024 - Present",
+    points: [
+      "Created Dart scripts using Abstract Syntax Tree parsing to detect missing text codes and unused app constants. Integrated these scripts into the app's CI/CD workflow to streamline code maintenance and prevent missing codes from reaching production.",
+      "Re-designed the app’s home and user profile pages, implementing bloc state management and UI layers for components in alignment with Domain Driven Design principles.",
+      "Increased test coverage by writing tests with the bloc_test package as part of engineering initiatives to enhance code quality and reliability.",
+      "Developed and migrated multiple components for the internal design system.",
+    ],
+  },
   {
     title: "Backend Developer",
     company_name: "Freelance",
@@ -342,6 +361,6 @@ const socials = [
 ]
 
 const email = "ayushsingh20april@gmail.com"
-const resumeLink = "https://drive.google.com/drive/folders/1DQTRmbh-PqOSv_r6LMoLstIKVwn7aQXL?usp=sharing"
+const resumeLink = "https://drive.google.com/file/d/1qD5y46N_5OpJvgh4CdASf6-C-0j7XmVb/view?usp=sharing"
 const mediumProfile = "https://medium.com/@aprayush20"
 export { socials, services, technologies, experiences, projects, email, mediumProfile, resumeLink, blogs };

@@ -39,7 +39,7 @@ const Hero = () => {
               />
             </h1>
             <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-              A passionate Computer Science undergrad, with expertise in Backend Development in Java & Spring Boot.
+              A passionate Computer Science graduate, currently working on Flutter App Development & Backend Development.
               <br className='block' />
             </p>
           </div>

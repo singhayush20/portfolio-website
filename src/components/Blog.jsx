@@ -1,10 +1,7 @@
-import React, { useState } from 'react'
-import { Tilt } from 'react-tilt';
-import { motion } from 'framer-motion';
+import React from 'react'
 import { styles } from '../styles/style';
 import { SectionWrapper } from '../higher_order_component';
 import { blogs, mediumProfile } from '../constants';
-import { fadeIn, zoomIn, textVariant } from '../motion';
 
 const ArticleCard = ({ index, name, link, description, image }) => {
     return (
@@ -45,12 +42,7 @@ const Blog = () => {
             <h2 className={`${styles.sectionHeadText}`}>Articles</h2>
             {/* </motion.div> */}
             <div className='w-full flex'>
-                {/* <motion.p
-                    variants={fadeIn("", "", 0.1, 1)}
-                    className='mt-3 text-secondary text-[17px] max-w-full leading-[30px]'
-                > */}
-                Explore my array of tech articles. Dive in for a deeper read. To view all, find me on  <a href={mediumProfile} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 hover:underline transition-colors duration-300 ">Medium</a>.
-                {/* </motion.p> */}
+                Explore my array of tech articles. Dive in for a deeper read. To view all, find me on &nbsp; <a href={mediumProfile} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400 hover:underline transition-colors duration-300">Medium</a>.
             </div>
             <div className='mt-20 flex flex-wrap justify-center gap-7'>
                 {
