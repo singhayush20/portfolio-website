@@ -9,6 +9,7 @@ import animationData from '../assets/animations/hero-animation.json';
 import { useScroll, useTransform } from "framer-motion";
 import { useTheme } from "../context/ThemeContext";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { socials, email } from '../constants';
 
 const Hero = () => {
   const { theme } = useTheme();
@@ -20,6 +21,9 @@ const Hero = () => {
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  const githubLink = socials.find(social => social.name === 'GitHub')?.link;
+  const linkedinLink = socials.find(social => social.name === 'LinkedIn')?.link;
 
   return (
     <section
@@ -56,7 +60,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Hi, I'm <span className="text-primary">Ayush Singh</span>
+            Hi, I'm <span className="text-primary">Ayush</span>
           </motion.h1>
           <motion.p
             className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto"
@@ -73,30 +77,24 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <a
-              href="https://github.com/ayushsingh-1"
+              href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className={`glass-card p-3 rounded-full hover:scale-110 transition-transform ${
-                theme === 'dark' ? 'text-foreground hover:text-primary' : 'text-foreground/90 hover:text-primary'
-              }`}
+              className="glass-card p-3 rounded-full hover-glow"
             >
               <Github className="w-6 h-6" />
             </a>
             <a
-              href="https://www.linkedin.com/in/ayush-singh-1/"
+              href={linkedinLink}
               target="_blank"
               rel="noopener noreferrer"
-              className={`glass-card p-3 rounded-full hover:scale-110 transition-transform ${
-                theme === 'dark' ? 'text-foreground hover:text-primary' : 'text-foreground/90 hover:text-primary'
-              }`}
+              className="glass-card p-3 rounded-full hover-glow"
             >
               <Linkedin className="w-6 h-6" />
             </a>
             <a
-              href="mailto:ayushsingh.work@gmail.com"
-              className={`glass-card p-3 rounded-full hover:scale-110 transition-transform ${
-                theme === 'dark' ? 'text-foreground hover:text-primary' : 'text-foreground/90 hover:text-primary'
-              }`}
+              href={`mailto:${email}`}
+              className="glass-card p-3 rounded-full hover-glow"
             >
               <Mail className="w-6 h-6" />
             </a>
@@ -109,7 +107,7 @@ const Hero = () => {
           >
             <a
               href="#about"
-              className="glass-card px-6 py-3 rounded-full flex items-center gap-2 hover:scale-105 transition-transform"
+              className="glass-card px-6 py-3 rounded-full flex items-center gap-2 hover-glow"
             >
               <span>Explore More</span>
               <ArrowDown className="w-5 h-5 animate-bounce" />
