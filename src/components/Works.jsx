@@ -1,7 +1,7 @@
 import React from 'react'
 import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
-import { github } from '../assets';
+import { git } from '../assets';
 import { styles } from '../styles/style';
 import { SectionWrapper } from '../higher_order_component';
 import { projects } from '../constants';
@@ -15,6 +15,8 @@ const ProjectCard = ({
   tags,
   source_links,
 }) => {
+  const { theme } = useTheme();
+  
   return (
     <Tilt
       options={{
@@ -36,7 +38,7 @@ const ProjectCard = ({
           >
             <div className='w-16 h-16 rounded-full flex justify-center items-center cursor-pointer'>
               <motion.img
-                src={github}
+                src={git}
                 alt='source code'
                 className='w-[90%] h-[90%] object-contain'
                 whileHover={{ rotate: 360 }}
