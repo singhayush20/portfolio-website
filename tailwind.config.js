@@ -60,6 +60,12 @@ export default {
         "glow-sm": "0 0 10px rgba(255,255,255,0.1)",
         "glow-md": "0 0 20px rgba(255,255,255,0.2)",
         "glow-lg": "0 0 30px rgba(255,255,255,0.3)",
+        "glass": "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+        "glass-hover": "0 8px 32px 0 rgba(31, 38, 135, 0.5)",
+        "elevated": "0 10px 30px -5px rgba(0, 0, 0, 0.1)",
+        "elevated-hover": "0 15px 40px -5px rgba(0, 0, 0, 0.2)",
+        "dark-elevated": "0 10px 30px -5px rgba(0, 0, 0, 0.3)",
+        "dark-elevated-hover": "0 15px 40px -5px rgba(0, 0, 0, 0.4)",
       },
       screens: {
         xs: "450px",
@@ -70,6 +76,15 @@ export default {
         'overlay': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9))',
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
+        'glass-gradient-dark': 'linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02))',
+      },
+      backdropBlur: {
+        xs: '2px',
+        sm: '4px',
+        md: '8px',
+        lg: '12px',
+        xl: '16px',
       },
       keyframes: {
         "accordion-down": {
@@ -110,6 +125,15 @@ export default {
             transform: "translate(0px, 0px) scale(1)",
           },
         },
+        "border-glow": {
+          "0%": { opacity: "0.3" },
+          "50%": { opacity: "0.7" },
+          "100%": { opacity: "0.3" },
+        },
+        "pulse": {
+          "0%, 100%": { opacity: "0.1", transform: "scale(1)" },
+          "50%": { opacity: "0.2", transform: "scale(1.1)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -119,6 +143,8 @@ export default {
         "slide-in": "slide-in 0.5s ease-out",
         "slide-out": "slide-out 0.5s ease-out",
         blob: "blob 7s infinite",
+        "border-glow": "border-glow 2s linear infinite",
+        "pulse": "pulse 4s ease-in-out infinite",
       },
     },
   },

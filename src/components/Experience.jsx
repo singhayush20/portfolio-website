@@ -32,7 +32,7 @@ const ExperienceCard = ({ experience }) => {
       }}
       icon={
         <motion.div
-          className='flex justify-center items-center h-full w-full'
+          className='flex justify-center items-center h-full w-full elevated-card border-glow'
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.2 }}
         >
@@ -44,32 +44,46 @@ const ExperienceCard = ({ experience }) => {
         </motion.div>
       }
     >
-      <div className='glass-effect rounded-xl p-6'>
-        <div>
-          <h3 className={`text-[24px] font-bold ${
-            theme === 'dark' ? 'text-foreground' : 'text-foreground/90'
-          }`}>{experience.title}</h3>
-          <p className={`text-[16px] font-semibold ${
-            theme === 'dark' ? 'text-primary/80' : 'text-primary'
-          }`} style={{ margin: 0 }}>
-            {experience.company_name}
-          </p>
+      <div className='relative group'>
+        {/* Splash background effect */}
+        <div className={`absolute inset-0 rounded-xl ${
+          theme === 'dark' 
+            ? 'bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10' 
+            : 'bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5'
+        }`} />
+        
+        {/* Glowing border effect */}
+        <div className='absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-primary/50 transition-all duration-300' />
+        <div className='absolute inset-0 rounded-xl bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-all duration-300' />
+        
+        {/* Content */}
+        <div className='relative p-6'>
+          <div>
+            <h3 className={`text-[24px] font-bold ${
+              theme === 'dark' ? 'text-foreground' : 'text-foreground/90'
+            }`}>{experience.title}</h3>
+            <p className={`text-[16px] font-semibold ${
+              theme === 'dark' ? 'text-primary/80' : 'text-primary'
+            }`} style={{ margin: 0 }}>
+              {experience.company_name}
+            </p>
+          </div>
+          <ul className='mt-5 list-disc ml-5 space-y-2'>
+            {experience.points.map((point, index) => (
+              <motion.li 
+                key={`experience-point-${index}`}
+                className={`text-[14px] pl-1 tracking-wider ${
+                  theme === 'dark' ? 'text-foreground/80' : 'text-foreground/70'
+                }`}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                {point}
+              </motion.li>
+            ))}
+          </ul>
         </div>
-        <ul className='mt-5 list-disc ml-5 space-y-2'>
-          {experience.points.map((point, index) => (
-            <motion.li 
-              key={`experience-point-${index}`}
-              className={`text-[14px] pl-1 tracking-wider ${
-                theme === 'dark' ? 'text-foreground/80' : 'text-foreground/70'
-              }`}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              {point}
-            </motion.li>
-          ))}
-        </ul>
       </div>
     </VerticalTimelineElement>
   )
@@ -105,7 +119,7 @@ const Experience = () => {
       </motion.p>
 
       <motion.div 
-        className='mt-20 flex flex-col glass-effect rounded-2xl py-10 px-4'
+        className='mt-20 flex flex-col py-10 px-4'
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}

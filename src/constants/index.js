@@ -361,6 +361,6 @@ const socials = [
 ]
 
 const email = "ayushsingh20april@gmail.com"
-const resumeLink = "https://drive.google.com/file/d/1qD5y46N_5OpJvgh4CdASf6-C-0j7XmVb/view?usp=sharing"
+const resumeLink = "https://drive.google.com/drive/folders/1r3FGjpOOjEqKP00cHCVUvlUJ_89yV9wX?usp=sharing"
 const mediumProfile = "https://medium.com/@aprayush20"
 export { socials, services, technologies, experiences, projects, email, mediumProfile, resumeLink, blogs };

@@ -14,8 +14,8 @@ const TechCard = ({ tech, index }) => {
       whileHover={{ scale: 1.05 }}
       className="relative"
     >
-      <div className='glass-effect p-[1px] rounded-[20px] shadow-card hover:shadow-glow-sm transition-all duration-300'>
-        <div className="bg-card/50 backdrop-blur-sm flex items-center gap-3 px-4 py-3 rounded-[20px]">
+      <div className='glass-card border-glow'>
+        <div className="flex items-center gap-3 px-4 py-3">
           <motion.img 
             src={tech.icon} 
             alt={tech.name} 
@@ -51,7 +51,7 @@ const Tech = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className={`mt-4 text-foreground text-[17px] max-w-full leading-[30px] ${
+        className={`mt-4 text-foreground text-[17px] max-w-full leading-[30px] glass-card p-6 ${
           theme === 'dark' ? 'text-foreground/80' : 'text-foreground/70'
         }`}
       >
@@ -59,7 +59,7 @@ const Tech = () => {
       </motion.p>
 
       <motion.div 
-        className='mt-16 glass-effect rounded-2xl p-8'
+        className='mt-16 glass-card border-glow p-8'
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}

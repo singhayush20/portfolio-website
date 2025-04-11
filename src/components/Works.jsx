@@ -24,15 +24,15 @@ const ProjectCard = ({
         scale: 1,
         speed: 450,
       }}
-      className='w-[95%] sm:w-[75%] md:w-[80%] glass-effect rounded-2xl p-[1px] shadow-card hover:shadow-glow-md transition-all duration-300'
+      className='w-[95%] sm:w-[75%] md:w-[80%] elevated-card border-glow'
     >
       <motion.div 
         variants={fadeIn("up", "spring", index * 0.5, 0.75)}
-        className='bg-card/50 backdrop-blur-sm rounded-2xl p-6'
+        className='glass-card p-6'
       >
         <div className='flex flex-col md:flex-row gap-6 items-start'>
           <motion.div 
-            className='glass-effect rounded-2xl p-4 flex-shrink-0'
+            className='glass-card p-4 flex-shrink-0 border-glow'
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
@@ -49,7 +49,7 @@ const ProjectCard = ({
 
           <div className='flex-1'>
             <div className='flex flex-col'>
-              <h3 className='text-foreground font-bold text-2xl'>{name}</h3>
+              <h3 className='text-foreground font-bold text-2xl gradient-text'>{name}</h3>
               <p className='mt-2 text-muted-foreground text-sm leading-relaxed'>{description}</p>
             </div>
 
@@ -58,7 +58,7 @@ const ProjectCard = ({
                 {tags.map((tag) => (
                   <span
                     key={`${name}-${tag.name}`}
-                    className={`text-sm px-2 py-1 rounded-full glass-effect ${tag.color}`}
+                    className={`text-sm px-2 py-1 rounded-full glass-button border-glow ${tag.color}`}
                   >
                     #{tag.name}
                   </span>
@@ -66,15 +66,19 @@ const ProjectCard = ({
               </div>
               <div className='flex gap-3'>
                 {source_links.map((source_link, index) => (
-                  <motion.img
-                    onClick={() => window.open(source_link.link, "_blank")}
-                    alt="project_link"
+                  <motion.div
                     key={index}
-                    src={source_link.icon}
-                    className="w-7 h-7 cursor-pointer"
+                    className="glass-button border-glow p-2 cursor-pointer"
                     whileHover={{ scale: 1.2 }}
                     transition={{ duration: 0.2 }}
-                  />
+                    onClick={() => window.open(source_link.link, "_blank")}
+                  >
+                    <img
+                      alt="project_link"
+                      src={source_link.icon}
+                      className="w-5 h-5"
+                    />
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -105,13 +109,13 @@ const Works = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-foreground/80 text-[17px] max-w-3xl leading-[30px]'
+        className='mt-4 text-foreground/80 text-[17px] max-w-3xl leading-[30px] glass-card p-6'
       >
         Line up of projects I have developed, during my journey.
       </motion.p>
 
       <motion.div 
-        className='mt-16 flex flex-col items-center gap-8 glass-effect rounded-2xl p-8'
+        className='mt-16 flex flex-col items-center gap-8 glass-card p-8 border-glow'
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}

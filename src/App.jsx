@@ -18,7 +18,7 @@ const AppContent = () => {
 
   return (
     <div className='relative min-h-screen bg-background text-foreground'>
-      {/* Enhanced background with animated gradient */}
+      {/* Enhanced background with animated gradient and glow */}
       <div className='fixed inset-0 -z-10'>
         <div className={`absolute inset-0 ${
           theme === 'dark' 
@@ -30,9 +30,10 @@ const AppContent = () => {
             ? 'bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]'
             : 'bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.05),transparent_50%)]'
         }`} />
+        <div className="background-glow" />
       </div>
 
-      {/* Animated gradient blobs */}
+      {/* Animated gradient blobs with enhanced effects */}
       <motion.div
         className={`fixed top-0 -left-4 w-72 h-72 ${
           theme === 'dark' ? 'bg-primary/20' : 'bg-primary/10'
@@ -86,6 +87,7 @@ const AppContent = () => {
         <>
           <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.05),transparent_50%)]" />
           <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_70%_70%,rgba(255,255,255,0.05),transparent_50%)]" />
+          <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_70%)]" />
         </>
       )}
 
@@ -97,6 +99,7 @@ const AppContent = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
+          className="relative z-10"
         >
           <Hero />
           <About />

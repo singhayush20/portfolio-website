@@ -45,18 +45,20 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-md shadow-lg" : "bg-transparent"
+        scrolled 
+          ? "bg-background/80 backdrop-blur-xl shadow-lg border-b border-primary/20" 
+          : "bg-background/40 backdrop-blur-md"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <motion.a
             href="#"
-            className="text-2xl font-bold text-primary flex items-center gap-2"
+            className="text-2xl font-bold flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-primary">AS</span>
+            <span className="text-blue-500">AS</span>
             <span className="text-foreground">Portfolio</span>
           </motion.a>
 
@@ -68,8 +70,8 @@ const Navbar = () => {
                 href={`#${item}`}
                 className={`text-sm font-medium transition-colors ${
                   active === item
-                    ? "text-primary"
-                    : "text-foreground/70 hover:text-primary"
+                    ? "text-blue-500"
+                    : "text-foreground/70 hover:text-blue-500"
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -77,7 +79,7 @@ const Navbar = () => {
                 {item.charAt(0).toUpperCase() + item.slice(1)}
                 {active === item && (
                   <motion.span
-                    className="block h-0.5 bg-primary"
+                    className="block h-0.5 bg-blue-500"
                     layoutId="activeSection"
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
@@ -86,7 +88,7 @@ const Navbar = () => {
             ))}
             <motion.button
               onClick={toggleTheme}
-              className="glass-card p-2 rounded-full"
+              className="glass-card p-2 rounded-full border border-blue-500/20 hover:border-blue-500/40 transition-colors"
               whileHover={{ scale: 1.05, rotate: 15 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -96,7 +98,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden glass-card p-2 rounded-lg"
+            className="md:hidden glass-card p-2 rounded-lg border border-blue-500/20 hover:border-blue-500/40 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -107,7 +109,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         <motion.div
-          className={`md:hidden glass-card rounded-lg overflow-hidden ${
+          className={`md:hidden glass-card rounded-lg overflow-hidden border border-blue-500/20 ${
             mobileMenuOpen ? "block" : "hidden"
           }`}
           initial={{ opacity: 0, height: 0 }}
@@ -121,8 +123,8 @@ const Navbar = () => {
                 href={`#${item}`}
                 className={`text-sm font-medium transition-colors ${
                   active === item
-                    ? "text-primary"
-                    : "text-foreground/70 hover:text-primary"
+                    ? "text-blue-500"
+                    : "text-foreground/70 hover:text-blue-500"
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
                 whileHover={{ scale: 1.05 }}
@@ -133,7 +135,7 @@ const Navbar = () => {
             ))}
             <motion.button
               onClick={toggleTheme}
-              className="glass-card p-2 rounded-full w-fit"
+              className="glass-card p-2 rounded-full w-fit border border-blue-500/20 hover:border-blue-500/40 transition-colors"
               whileHover={{ scale: 1.05, rotate: 15 }}
               whileTap={{ scale: 0.95 }}
             >
