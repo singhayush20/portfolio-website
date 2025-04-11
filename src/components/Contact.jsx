@@ -95,7 +95,11 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex-[0.5] glass-card border-glow rounded-2xl p-8 max-w-[600px] hover:shadow-lg transition-all duration-300"
+            className={`flex-[0.5] bg-card/50 backdrop-blur-sm rounded-2xl p-8 max-w-[600px] hover:shadow-lg transition-all duration-300 ${
+              theme === 'dark' 
+                ? 'border border-purple-500/30 shadow-[0_0_15px_rgba(168,85,247,0.3)] hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]' 
+                : 'border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]'
+            }`}
           >
             <p className={`${styles.sectionSubText} text-muted-foreground`}>Get in touch</p>
             <h3 className={`${styles.sectionHeadText} text-foreground`}>Send an Email</h3>
@@ -119,7 +123,11 @@ const Contact = () => {
                   value={form.name}
                   onChange={handleChange}
                   placeholder="What's your good name?"
-                  className='bg-card/50 backdrop-blur-sm py-4 px-6 placeholder:text-muted-foreground text-foreground rounded-lg outline-none border border-blue-500/20 focus:border-blue-500/40 transition-colors duration-300 font-medium'
+                  className={`bg-card/50 backdrop-blur-sm py-4 px-6 placeholder:text-muted-foreground text-foreground rounded-lg outline-none border ${
+                    theme === 'dark' 
+                      ? 'border-purple-500/20 focus:border-purple-500/40' 
+                      : 'border-blue-500/20 focus:border-blue-500/40'
+                  } transition-colors duration-300 font-medium`}
                 />
               </motion.label>
               <motion.label 
@@ -136,7 +144,11 @@ const Contact = () => {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="Eg: ayushsingh20april@gmail.com"
-                  className='bg-card/50 backdrop-blur-sm py-4 px-6 placeholder:text-muted-foreground text-foreground rounded-lg outline-none border border-blue-500/20 focus:border-blue-500/40 transition-colors duration-300 font-medium'
+                  className={`bg-card/50 backdrop-blur-sm py-4 px-6 placeholder:text-muted-foreground text-foreground rounded-lg outline-none border ${
+                    theme === 'dark' 
+                      ? 'border-purple-500/20 focus:border-purple-500/40' 
+                      : 'border-blue-500/20 focus:border-blue-500/40'
+                  } transition-colors duration-300 font-medium`}
                 />
               </motion.label>
               <motion.label 
@@ -153,7 +165,11 @@ const Contact = () => {
                   value={form.message}
                   onChange={handleChange}
                   placeholder='Write a message for me.'
-                  className='bg-card/50 backdrop-blur-sm py-4 px-6 placeholder:text-muted-foreground text-foreground rounded-lg outline-none border border-blue-500/20 focus:border-blue-500/40 transition-colors duration-300 font-medium resize-none'
+                  className={`bg-card/50 backdrop-blur-sm py-4 px-6 placeholder:text-muted-foreground text-foreground rounded-lg outline-none border ${
+                    theme === 'dark' 
+                      ? 'border-purple-500/20 focus:border-purple-500/40' 
+                      : 'border-blue-500/20 focus:border-blue-500/40'
+                  } transition-colors duration-300 font-medium resize-none`}
                 />
               </motion.label>
 
@@ -168,7 +184,11 @@ const Contact = () => {
                   type='submit'
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className='glass-button border-glow py-3 px-8 rounded-xl outline-none text-foreground font-bold hover:bg-blue-500/20 transition-all duration-300'
+                  className={`py-3 px-8 rounded-xl outline-none text-foreground font-bold transition-all duration-300 ${
+                    theme === 'dark' 
+                      ? 'bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 shadow-[0_0_10px_rgba(168,85,247,0.2)]' 
+                      : 'bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 shadow-[0_0_10px_rgba(59,130,246,0.2)]'
+                  }`}
                 >
                   {loading ? "Sending..." : "Send"}
                 </motion.button>
@@ -190,108 +210,111 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className='flex-[0.5] glass-card border-glow rounded-2xl p-8 max-w-[600px] hover:shadow-lg transition-all duration-300'
+            className={`flex-[0.5] bg-card/50 backdrop-blur-sm rounded-2xl p-8 max-w-[600px] hover:shadow-lg transition-all duration-300 ${
+              theme === 'dark' 
+                ? 'border border-cyan-500/30 shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]' 
+                : 'border border-green-500/30 shadow-[0_0_15px_rgba(34,197,94,0.3)] hover:shadow-[0_0_20px_rgba(34,197,94,0.4)]'
+            }`}
           >
             <p className={`${styles.sectionSubText} text-muted-foreground`}>Want to know more</p>
             <h3 className={`${styles.sectionHeadText} text-foreground`}>Connect.</h3>
             
             <div className='mt-12 flex flex-col gap-8'>
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="glass-card border-glow p-6 rounded-xl hover:shadow-lg transition-all duration-300"
-              >
+              <div className={`bg-card/50 backdrop-blur-sm p-6 rounded-xl hover:shadow-lg transition-all duration-300 ${
+                theme === 'dark' 
+                  ? 'border border-cyan-500/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]' 
+                  : 'border border-green-500/30 shadow-[0_0_10px_rgba(34,197,94,0.2)]'
+              }`}>
                 <h3 className="text-2xl sm:text-3xl text-foreground font-bold tracking-wider">Email</h3>
                 <div className="flex items-center gap-3 mt-2">
-                  <p className="text-muted-foreground text-base sm:text-lg font-medium tracking-wider lowercase">
+                  <p className="text-muted-foreground text-base sm:text-lg font-medium tracking-wider lowercase select-text cursor-text">
                     {email}
                   </p>
-                  <motion.img 
-                    src={copy} 
-                    alt="copy" 
-                    className="w-6 h-6 cursor-pointer"
-                    whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.9 }}
+                  <button
                     onClick={copyToClipboard}
-                  />
+                    className={`p-1 rounded-lg transition-colors cursor-pointer ${
+                      theme === 'dark' 
+                        ? 'hover:bg-cyan-500/20' 
+                        : 'hover:bg-green-500/20'
+                    }`}
+                  >
+                    <img src={copy} alt="copy" className="w-6 h-6" />
+                  </button>
                   {emailCopied && (
-                    <motion.span 
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      className="text-blue-500 font-medium"
-                    >
+                    <span className={`font-medium ${
+                      theme === 'dark' 
+                        ? 'text-cyan-500' 
+                        : 'text-green-500'
+                    }`}>
                       Copied!
-                    </motion.span>
+                    </span>
                   )}
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="glass-card border-glow p-6 rounded-xl hover:shadow-lg transition-all duration-300"
-              >
+              <div className={`bg-card/50 backdrop-blur-sm p-6 rounded-xl hover:shadow-lg transition-all duration-300 ${
+                theme === 'dark' 
+                  ? 'border border-cyan-500/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]' 
+                  : 'border border-green-500/30 shadow-[0_0_10px_rgba(34,197,94,0.2)]'
+              }`}>
                 <h3 className="text-2xl sm:text-3xl text-foreground font-bold">Socials</h3>
                 <div className="flex flex-wrap gap-4 mt-4">
                   {socials.map((handle, index) => (
-                    <motion.div 
+                    <button
                       key={`social-${handle.name}`}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true, amount: 0.25 }}
-                      transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                      className="glass-button border-glow p-3 rounded-2xl cursor-pointer hover:bg-blue-500/20 transition-all duration-300"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
+                      className={`bg-card/50 backdrop-blur-sm p-3 rounded-2xl transition-all duration-300 cursor-pointer ${
+                        theme === 'dark' 
+                          ? 'border border-cyan-500/30 hover:bg-cyan-500/20 shadow-[0_0_5px_rgba(6,182,212,0.1)]' 
+                          : 'border border-green-500/30 hover:bg-green-500/20 shadow-[0_0_5px_rgba(34,197,94,0.1)]'
+                      }`}
                       onClick={() => window.open(handle.link, "_blank")}
                     >
                       <img src={handle.icon} alt={handle.name} className="w-10 h-10" />
-                    </motion.div>
+                    </button>
                   ))}
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                className="glass-card border-glow p-6 rounded-xl hover:shadow-lg transition-all duration-300"
-              >
+              <div className={`bg-card/50 backdrop-blur-sm p-6 rounded-xl hover:shadow-lg transition-all duration-300 ${
+                theme === 'dark' 
+                  ? 'border border-cyan-500/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]' 
+                  : 'border border-green-500/30 shadow-[0_0_10px_rgba(34,197,94,0.2)]'
+              }`}>
                 <h3 className="text-2xl sm:text-3xl text-foreground font-bold">Resume</h3>
                 <div className="flex items-center gap-3 mt-2">
-                  <motion.a 
+                  <a 
                     href={resumeLink} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-foreground hover:text-blue-500 underline-offset-4 decoration-blue-500/50 hover:decoration-blue-500 transition-all duration-300"
-                    whileHover={{ scale: 1.05 }}
+                    className={`text-foreground transition-all duration-300 select-text cursor-pointer ${
+                      theme === 'dark' 
+                        ? 'hover:text-cyan-500 underline-offset-4 decoration-cyan-500/50 hover:decoration-cyan-500' 
+                        : 'hover:text-green-500 underline-offset-4 decoration-green-500/50 hover:decoration-green-500'
+                    }`}
                   >
                     View My Resume
-                  </motion.a>
-                  <motion.img 
-                    src={link} 
-                    alt="link" 
-                    className="w-6 h-6 cursor-pointer"
-                    whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.9 }}
+                  </a>
+                  <button
                     onClick={copyResumeToClipboard}
-                  />
+                    className={`p-1 rounded-lg transition-colors cursor-pointer ${
+                      theme === 'dark' 
+                        ? 'hover:bg-cyan-500/20' 
+                        : 'hover:bg-green-500/20'
+                    }`}
+                  >
+                    <img src={copy} alt="copy" className="w-6 h-6" />
+                  </button>
                   {resumeCopied && (
-                    <motion.span 
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      className="text-blue-500 font-medium"
-                    >
+                    <span className={`font-medium ${
+                      theme === 'dark' 
+                        ? 'text-cyan-500' 
+                        : 'text-green-500'
+                    }`}>
                       Copied!
-                    </motion.span>
+                    </span>
                   )}
                 </div>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>
