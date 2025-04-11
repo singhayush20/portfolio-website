@@ -1,73 +1,125 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { styles } from '../styles/style'
 import { profile } from '../assets'
 import { TypeAnimation } from 'react-type-animation';
+import { Parallax } from 'react-parallax';
+import Lottie from 'lottie-react';
+import animationData from '../assets/animations/hero-animation.json';
+import { useScroll, useTransform } from "framer-motion";
+import { useTheme } from "../context/ThemeContext";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+
 const Hero = () => {
+  const { theme } = useTheme();
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
 
-  
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
   return (
-    <section className='w-full relative bg-no-repeat bg-center pt-20 md:pt-32'>
-      <div className=' flex flex-col md:flex-row justify-evenly items-center md:mx-auto'>
-        <div className={` md:w-[60%] w-[100%] inset-0 max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
-          <div className='flex flex-col justify-center items-center mt-5'>
-            <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
-            <div className='w-1 sm:h-80 h-52 violet-gradient' />
-          </div>
-          <div>
-            <h1 className={`${styles.heroHeadText} text-white md:`}>
-              <TypeAnimation
-                preRenderFirstString={false}
-
-                sequence={[
-                  500,
-                  'Hi,',
-                  500,
-                  'Hi, I\'m ',
-                  500,
-                  'Hi, I\'m Ayush',
-                  500,
-                  'Hi, I\'m ',
-                  500,
-                  'Hi,'
-                ]}
-                className={styles.textGradientHero}
-                speed={25}
-                repeat={Infinity}
-
-
-              />
-            </h1>
-            <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-              A passionate Computer Science graduate, currently working on Flutter App Development & Backend Development.
-              <br className='block' />
-            </p>
-          </div>
-        </div>
-        <div className='md:w-[40%] w-[100%] flex justify-center items-center'>
+    <section
+      ref={containerRef}
+      className="hero-section"
+    >
+      {/* Enhanced background with gradient and glass effect */}
+      <div className="hero-bg" />
       
-            <img src={profile} alt='Your Image' className=' rounded-full shadow-md w-60 h-60 lg:w-80 lg:h-80 bg-gradient-to-r blue-green-purple-gradient px-1 py-1 cursor-pointer ' />
-          
+      {/* Animated gradient blobs */}
+      <motion.div
+        className="absolute top-0 -left-4 w-72 h-72 bg-primary/20 rounded-full filter blur-xl opacity-70 animate-blob"
+        style={{ y }}
+      />
+      <motion.div
+        className="absolute top-0 -right-4 w-72 h-72 bg-secondary/20 rounded-full filter blur-xl opacity-70 animate-blob animation-delay-2000"
+        style={{ y }}
+      />
+      <motion.div
+        className="absolute -bottom-8 left-20 w-72 h-72 bg-accent/20 rounded-full filter blur-xl opacity-70 animate-blob animation-delay-4000"
+        style={{ y }}
+      />
 
-        </div>
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center"
+        >
+          <motion.h1
+            className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Hi, I'm <span className="text-primary">Ayush Singh</span>
+          </motion.h1>
+          <motion.p
+            className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            A passionate Full Stack Developer with expertise in building modern web applications.
+          </motion.p>
+          <motion.div
+            className="flex justify-center gap-4 mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <a
+              href="https://github.com/ayushsingh-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`glass-card p-3 rounded-full hover:scale-110 transition-transform ${
+                theme === 'dark' ? 'text-foreground hover:text-primary' : 'text-foreground/90 hover:text-primary'
+              }`}
+            >
+              <Github className="w-6 h-6" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ayush-singh-1/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`glass-card p-3 rounded-full hover:scale-110 transition-transform ${
+                theme === 'dark' ? 'text-foreground hover:text-primary' : 'text-foreground/90 hover:text-primary'
+              }`}
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a
+              href="mailto:ayushsingh.work@gmail.com"
+              className={`glass-card p-3 rounded-full hover:scale-110 transition-transform ${
+                theme === 'dark' ? 'text-foreground hover:text-primary' : 'text-foreground/90 hover:text-primary'
+              }`}
+            >
+              <Mail className="w-6 h-6" />
+            </a>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex justify-center"
+          >
+            <a
+              href="#about"
+              className="glass-card px-6 py-3 rounded-full flex items-center gap-2 hover:scale-105 transition-transform"
+            >
+              <span>Explore More</span>
+              <ArrowDown className="w-5 h-5 animate-bounce" />
+            </a>
+          </motion.div>
+        </motion.div>
       </div>
-      <div className='flex xs:bottom-10 bottom-32 w-[100%] my-6 justify-center items-center'>
-        <a href='#about'>
-          <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
-            <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className='w-3 h-3 rounded-full bg-secondary mb-1'
-            />
-          </div>
-        </a>
-      </div>
+
+      {/* Enhanced glass overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/30 to-background/80 pointer-events-none" />
     </section>
   )
 }

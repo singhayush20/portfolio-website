@@ -4,19 +4,28 @@ import { technologies } from '../constants';
 import { styles } from '../styles/style';
 import { fadeIn, textVariant } from '../motion'
 import { motion } from 'framer-motion'
+import { useTheme } from '../context/ThemeContext'
 
 const TechCard = ({ tech, index }) => {
+  const { theme } = useTheme();
   return (
     <motion.div
-      variants={fadeIn("right", "spring", 0.1 * index, 0.75)}>
-      <div className="relative overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105">
-        <div className='blue-green-purple-gradient p-[1px] rounded-[20px] shadow-card'>
-          <div>
-            <div className="bg-gradient-to-r from-[#1C1E35] to-[#2e4a5f]  flex justify-center items-center flex-row px-2 py-2 gap-1 cursor-pointer rounded-[20px] shadow-card">
-              <img src={tech.icon} alt={tech.name} width={'30px'} />
-              <span className="text-white">{tech.name}</span>
-            </div>
-          </div>
+      variants={fadeIn("right", "spring", 0.1 * index, 0.75)}
+      whileHover={{ scale: 1.05 }}
+      className="relative"
+    >
+      <div className='glass-effect p-[1px] rounded-[20px] shadow-card hover:shadow-glow-sm transition-all duration-300'>
+        <div className="bg-card/50 backdrop-blur-sm flex items-center gap-3 px-4 py-3 rounded-[20px]">
+          <motion.img 
+            src={tech.icon} 
+            alt={tech.name} 
+            className="w-6 h-6"
+            whileHover={{ rotate: 360 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+          />
+          <span className={`text-foreground font-medium ${
+            theme === 'dark' ? 'text-foreground/80' : 'text-foreground/70'
+          }`}>{tech.name}</span>
         </div>
       </div>
     </motion.div>
@@ -24,25 +33,44 @@ const TechCard = ({ tech, index }) => {
 };
 
 const Tech = () => {
+  const { theme } = useTheme();
   return (
-    <div>
-      <motion.div
-        variants={textVariant()}>
-        <p className={`${styles.sectionSubText}`}>My Skills</p>
-        <h2 className={`${styles.sectionHeadText}`}>Tools and Technologies</h2>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.div variants={textVariant()}>
+        <p className={`${styles.sectionSubText} ${
+          theme === 'dark' ? 'text-primary/80' : 'text-primary'
+        }`}>My skills</p>
+        <h2 className={`${styles.sectionHeadText} ${
+          theme === 'dark' ? 'text-foreground' : 'text-foreground/90'
+        }`}>Technologies.</h2>
       </motion.div>
+
       <motion.p
-        variants={textVariant()}
-        className='mt-3 text-secondary text-[17px] max-w-full leading-[30px]'
+        variants={fadeIn("", "", 0.1, 1)}
+        className={`mt-4 text-foreground text-[17px] max-w-full leading-[30px] ${
+          theme === 'dark' ? 'text-foreground/80' : 'text-foreground/70'
+        }`}
       >
         I'm driven by curiosity and thrive on exploring the world of technology.
       </motion.p>
-      <div className='mt-10 flex flex-row flex-wrap md:gap-10 gap-5 items-center justify-center'>
-        {technologies.map((tech, index) => (
-          <TechCard key={tech.name} tech={tech} index={index} />
-        ))}
-      </div>
-    </div>
+
+      <motion.div 
+        className='mt-16 glass-effect rounded-2xl p-8'
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <div className='flex flex-wrap justify-center gap-6 md:gap-8'>
+          {technologies.map((tech, index) => (
+            <TechCard key={tech.name} tech={tech} index={index} />
+          ))}
+        </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

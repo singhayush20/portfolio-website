@@ -6,6 +6,7 @@ import { styles } from '../styles/style';
 import { SectionWrapper } from '../higher_order_component';
 import { projects } from '../constants';
 import { fadeIn, textVariant } from '../motion';
+import { useTheme } from '../context/ThemeContext';
 
 const ProjectCard = ({
   index,
@@ -21,56 +22,58 @@ const ProjectCard = ({
         scale: 1,
         speed: 450,
       }}
-      className=' w-[95%] sm:w-[75%] bg-[#121729] bg-opacity-85 md:w-[80%] rounded-2xl p-1'
-
+      className='w-[95%] sm:w-[75%] md:w-[80%] glass-effect rounded-2xl p-[1px] shadow-card hover:shadow-glow-md transition-all duration-300'
     >
-      <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-        <div className='dark-blue-purple-gradient p-5 rounded-2xl  w-full flex flex-col md:flex-row gap-5 items-center justify-center'>
-
-          <div className='black-gradient rounded-2xl flex justify-center items-center'>
-            <div className='w-20 h-20 rounded-full flex justify-center items-center cursor-pointer'>
-              <img
+      <motion.div 
+        variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+        className='bg-card/50 backdrop-blur-sm rounded-2xl p-6'
+      >
+        <div className='flex flex-col md:flex-row gap-6 items-start'>
+          <motion.div 
+            className='glass-effect rounded-2xl p-4 flex-shrink-0'
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className='w-16 h-16 rounded-full flex justify-center items-center cursor-pointer'>
+              <motion.img
                 src={github}
                 alt='source code'
                 className='w-[90%] h-[90%] object-contain'
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
               />
             </div>
-          </div>
+          </motion.div>
 
-
-          <div>
-            <div className='flex flex-col justify-center items-start'>
-              <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-              <p className='mt-2 text-secondary text-[14px]'>{description}</p>
+          <div className='flex-1'>
+            <div className='flex flex-col'>
+              <h3 className='text-foreground font-bold text-2xl'>{name}</h3>
+              <p className='mt-2 text-muted-foreground text-sm leading-relaxed'>{description}</p>
             </div>
 
-            <div className='mt-4 flex flex-wrap gap-4'>
-              <div className='flex flex-wrap gap-2 flex-row'>
+            <div className='mt-4 flex flex-wrap items-center gap-4'>
+              <div className='flex flex-wrap gap-2'>
                 {tags.map((tag) => (
-                  <p
+                  <span
                     key={`${name}-${tag.name}`}
-                    className={`text-[14px] ${tag.color}`}
+                    className={`text-sm px-2 py-1 rounded-full glass-effect ${tag.color}`}
                   >
                     #{tag.name}
-                  </p>
+                  </span>
                 ))}
               </div>
-              <div className='flex flex-wrap gap-2 flex-row'>
-                {
-                  source_links.map((source_link, index) => {
-                    return (
-                      <img
-                        onClick={() => window.open(source_link.link, "_blank")}
-                        alt="project_link"
-                        key={index}
-                        src={source_link.icon}
-                        className="cursor-pointer"
-                        width={'30px'}
-                        height={'30px'}
-                      />
-                    );
-                  })
-                }
+              <div className='flex gap-3'>
+                {source_links.map((source_link, index) => (
+                  <motion.img
+                    onClick={() => window.open(source_link.link, "_blank")}
+                    alt="project_link"
+                    key={index}
+                    src={source_link.icon}
+                    className="w-7 h-7 cursor-pointer"
+                    whileHover={{ scale: 1.2 }}
+                    transition={{ duration: 0.2 }}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -80,37 +83,46 @@ const ProjectCard = ({
   );
 };
 
-
 const Works = () => {
+  const { theme } = useTheme();
+
   return (
-    <div>
-      <motion.div
-        variants={textVariant()}>
-        <p className={`${styles.sectionSubText}`}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects</h2>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.div variants={textVariant()}>
+        <p className={`${styles.sectionSubText} ${
+          theme === 'dark' ? 'text-primary/80' : 'text-primary'
+        }`}>My work</p>
+        <h2 className={`${styles.sectionHeadText} ${
+          theme === 'dark' ? 'text-foreground' : 'text-foreground/90'
+        }`}>Projects.</h2>
       </motion.div>
-      <div className='w-full flex'>
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
-        >
-          Line up of projects I have developed, during my journey.
-        </motion.p>
-      </div>
-      <div className='mt-20 flex flex-wrap items-center justify-center gap-7 bg-opacity-80 bg-[#101525] py-10 rounded-2xl'>
-        {
-          projects.map((project, index) => {
-            return (
-              <ProjectCard
-                key={`project-${index}`}
-                index={index}
-                {...project}
-              />
-            )
-          })
-        }
-      </div>
-    </div>
+
+      <motion.p
+        variants={fadeIn("", "", 0.1, 1)}
+        className='mt-4 text-foreground/80 text-[17px] max-w-3xl leading-[30px]'
+      >
+        Line up of projects I have developed, during my journey.
+      </motion.p>
+
+      <motion.div 
+        className='mt-16 flex flex-col items-center gap-8 glass-effect rounded-2xl p-8'
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={`project-${index}`}
+            index={index}
+            {...project}
+          />
+        ))}
+      </motion.div>
+    </motion.div>
   )
 }
 
