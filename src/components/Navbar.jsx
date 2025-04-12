@@ -64,28 +64,22 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {["about", "experience", "tech", "works", "blog", "contact"].map((item) => (
-              <motion.a
-                key={item}
-                href={`#${item}`}
-                className={`text-sm font-medium transition-colors ${
-                  active === item
-                    ? "text-blue-500"
-                    : "text-foreground/70 hover:text-blue-500"
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-                {active === item && (
-                  <motion.span
-                    className="block h-0.5 bg-blue-500"
-                    layoutId="activeSection"
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  />
-                )}
-              </motion.a>
-            ))}
+            <ul className="flex flex-row gap-6">
+              {navLinks.map((link) => (
+                <li key={link.id}>
+                  <a
+                    href={`#${link.id}`}
+                    className={`text-foreground font-medium text-sm transition-colors ${
+                      theme === 'dark' 
+                        ? 'hover:text-primary/80' 
+                        : 'hover:text-primary'
+                    }`}
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
             <motion.button
               onClick={toggleTheme}
               className="glass-card p-2 rounded-full border border-blue-500/20 hover:border-blue-500/40 transition-colors"
@@ -117,22 +111,22 @@ const Navbar = () => {
           transition={{ duration: 0.3 }}
         >
           <div className="flex flex-col p-4 gap-4">
-            {["about", "experience", "tech", "works", "blog", "contact"].map((item) => (
-              <motion.a
-                key={item}
-                href={`#${item}`}
-                className={`text-sm font-medium transition-colors ${
-                  active === item
-                    ? "text-blue-500"
-                    : "text-foreground/70 hover:text-blue-500"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </motion.a>
-            ))}
+            <ul className="flex flex-row gap-6">
+              {navLinks.map((link) => (
+                <li key={link.id}>
+                  <a
+                    href={`#${link.id}`}
+                    className={`text-foreground font-medium text-sm transition-colors ${
+                      theme === 'dark' 
+                        ? 'hover:text-primary/80' 
+                        : 'hover:text-primary'
+                    }`}
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
             <motion.button
               onClick={toggleTheme}
               className="glass-card p-2 rounded-full w-fit border border-blue-500/20 hover:border-blue-500/40 transition-colors"

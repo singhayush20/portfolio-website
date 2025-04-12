@@ -12,10 +12,18 @@ const ArticleCard = ({ index, name, link, description, image }) => {
     <motion.div 
       variants={fadeIn("up", "spring", index * 0.5, 0.75)}
       whileHover={{ scale: 1.02 }}
-      className='w-[360px] glass-effect rounded-2xl p-[1px] shadow-card hover:shadow-glow-md transition-all duration-300 cursor-pointer'
+      className={`w-[360px] glass-effect rounded-2xl p-[1px] transition-all duration-300 cursor-pointer ${
+        theme === 'dark' 
+          ? 'shadow-[0_0_15px_rgba(168,85,247,0.2)] hover:shadow-[0_0_25px_rgba(168,85,247,0.3)]' 
+          : 'shadow-[0_0_15px_rgba(59,130,246,0.2)] hover:shadow-[0_0_25px_rgba(59,130,246,0.3)]'
+      }`}
       onClick={() => window.open(link, '_blank')}
     >
-      <div className='bg-card/50 backdrop-blur-sm p-5 rounded-2xl w-full'>
+      <div className={`bg-card/50 backdrop-blur-sm p-5 rounded-2xl w-full ${
+        theme === 'dark' 
+          ? 'border border-purple-500/30' 
+          : 'border border-blue-500/30'
+      }`}>
         <motion.div 
           className='rounded-2xl overflow-hidden h-[280px]'
           whileHover={{ scale: 1.05 }}
@@ -68,7 +76,11 @@ const Blog = () => {
           href={mediumProfile} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="ml-2 text-foreground hover:text-primary underline-offset-4 decoration-primary/50 hover:decoration-primary transition-all duration-300"
+          className={`ml-2 text-foreground hover:text-primary underline-offset-4 decoration-primary/50 hover:decoration-primary transition-all duration-300 ${
+            theme === 'dark' 
+              ? 'hover:text-purple-500 decoration-purple-500/50 hover:decoration-purple-500' 
+              : 'hover:text-blue-500 decoration-blue-500/50 hover:decoration-blue-500'
+          }`}
           whileHover={{ scale: 1.05 }}
         >
           Medium
@@ -77,7 +89,11 @@ const Blog = () => {
       </motion.div>
 
       <motion.div 
-        className='mt-16 glass-effect rounded-2xl p-8'
+        className={`mt-16 glass-effect rounded-2xl p-8 ${
+          theme === 'dark' 
+            ? 'border border-purple-500/20 shadow-[0_0_20px_rgba(168,85,247,0.1)]' 
+            : 'border border-blue-500/20 shadow-[0_0_20px_rgba(59,130,246,0.1)]'
+        }`}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}

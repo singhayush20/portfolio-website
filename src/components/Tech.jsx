@@ -14,7 +14,11 @@ const TechCard = ({ tech, index }) => {
       whileHover={{ scale: 1.05 }}
       className="relative"
     >
-      <div className='glass-card border-glow'>
+      <div className={`glass-card ${
+        theme === 'dark' 
+          ? 'border border-indigo-500/30 shadow-[0_0_10px_rgba(99,102,241,0.2)] hover:shadow-[0_0_15px_rgba(99,102,241,0.3)]' 
+          : 'border border-violet-500/30 shadow-[0_0_10px_rgba(139,92,246,0.2)] hover:shadow-[0_0_15px_rgba(139,92,246,0.3)]'
+      }`}>
         <div className="flex items-center gap-3 px-4 py-3">
           <motion.img 
             src={tech.icon} 

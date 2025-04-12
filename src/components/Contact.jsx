@@ -89,16 +89,13 @@ const Contact = () => {
         transition={{ duration: 0.5 }}
         className="container mx-auto px-4 relative z-10"
       >
-        <div className="flex xl:flex-row flex-col-reverse gap-10">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className={`flex-[0.5] bg-card/50 backdrop-blur-sm rounded-2xl p-8 max-w-[600px] hover:shadow-lg transition-all duration-300 ${
+        <div className='flex flex-col md:flex-row gap-10'>
+          <motion.div
+            variants={fadeIn("right", "spring", 0.1, 0.75)}
+            className={`glass-card flex-1 p-6 rounded-2xl ${
               theme === 'dark' 
-                ? 'border border-purple-500/30 shadow-[0_0_15px_rgba(168,85,247,0.3)] hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]' 
-                : 'border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]'
+                ? 'border border-cyan-500/30 shadow-[0_0_15px_rgba(6,182,212,0.2)] hover:shadow-[0_0_25px_rgba(6,182,212,0.3)]' 
+                : 'border border-sky-500/30 shadow-[0_0_15px_rgba(14,165,233,0.2)] hover:shadow-[0_0_25px_rgba(14,165,233,0.3)]'
             }`}
           >
             <p className={`${styles.sectionSubText} text-muted-foreground`}>Get in touch</p>
@@ -205,15 +202,12 @@ const Contact = () => {
             </form>
           </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className={`flex-[0.5] bg-card/50 backdrop-blur-sm rounded-2xl p-8 max-w-[600px] hover:shadow-lg transition-all duration-300 ${
+          <motion.div
+            variants={fadeIn("left", "spring", 0.1, 0.75)}
+            className={`glass-card flex-1 p-6 rounded-2xl ${
               theme === 'dark' 
-                ? 'border border-cyan-500/30 shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]' 
-                : 'border border-green-500/30 shadow-[0_0_15px_rgba(34,197,94,0.3)] hover:shadow-[0_0_20px_rgba(34,197,94,0.4)]'
+                ? 'border border-cyan-500/30 shadow-[0_0_15px_rgba(6,182,212,0.2)] hover:shadow-[0_0_25px_rgba(6,182,212,0.3)]' 
+                : 'border border-sky-500/30 shadow-[0_0_15px_rgba(14,165,233,0.2)] hover:shadow-[0_0_25px_rgba(14,165,233,0.3)]'
             }`}
           >
             <p className={`${styles.sectionSubText} text-muted-foreground`}>Want to know more</p>
@@ -223,7 +217,7 @@ const Contact = () => {
               <div className={`bg-card/50 backdrop-blur-sm p-6 rounded-xl hover:shadow-lg transition-all duration-300 ${
                 theme === 'dark' 
                   ? 'border border-cyan-500/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]' 
-                  : 'border border-green-500/30 shadow-[0_0_10px_rgba(34,197,94,0.2)]'
+                  : 'border border-sky-500/30 shadow-[0_0_10px_rgba(14,165,233,0.2)]'
               }`}>
                 <h3 className="text-2xl sm:text-3xl text-foreground font-bold tracking-wider">Email</h3>
                 <div className="flex items-center gap-3 mt-2">
@@ -235,7 +229,7 @@ const Contact = () => {
                     className={`p-1 rounded-lg transition-colors cursor-pointer ${
                       theme === 'dark' 
                         ? 'hover:bg-cyan-500/20' 
-                        : 'hover:bg-green-500/20'
+                        : 'hover:bg-sky-500/20'
                     }`}
                   >
                     <img src={copy} alt="copy" className="w-6 h-6" />
@@ -244,7 +238,7 @@ const Contact = () => {
                     <span className={`font-medium ${
                       theme === 'dark' 
                         ? 'text-cyan-500' 
-                        : 'text-green-500'
+                        : 'text-sky-500'
                     }`}>
                       Copied!
                     </span>
@@ -255,7 +249,7 @@ const Contact = () => {
               <div className={`bg-card/50 backdrop-blur-sm p-6 rounded-xl hover:shadow-lg transition-all duration-300 ${
                 theme === 'dark' 
                   ? 'border border-cyan-500/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]' 
-                  : 'border border-green-500/30 shadow-[0_0_10px_rgba(34,197,94,0.2)]'
+                  : 'border border-sky-500/30 shadow-[0_0_10px_rgba(14,165,233,0.2)]'
               }`}>
                 <h3 className="text-2xl sm:text-3xl text-foreground font-bold">Socials</h3>
                 <div className="flex flex-wrap gap-4 mt-4">
@@ -265,7 +259,7 @@ const Contact = () => {
                       className={`bg-card/50 backdrop-blur-sm p-3 rounded-2xl transition-all duration-300 cursor-pointer ${
                         theme === 'dark' 
                           ? 'border border-cyan-500/30 hover:bg-cyan-500/20 shadow-[0_0_5px_rgba(6,182,212,0.1)]' 
-                          : 'border border-green-500/30 hover:bg-green-500/20 shadow-[0_0_5px_rgba(34,197,94,0.1)]'
+                          : 'border border-sky-500/30 hover:bg-sky-500/20 shadow-[0_0_5px_rgba(14,165,233,0.1)]'
                       }`}
                       onClick={() => window.open(handle.link, "_blank")}
                     >
@@ -278,7 +272,7 @@ const Contact = () => {
               <div className={`bg-card/50 backdrop-blur-sm p-6 rounded-xl hover:shadow-lg transition-all duration-300 ${
                 theme === 'dark' 
                   ? 'border border-cyan-500/30 shadow-[0_0_10px_rgba(6,182,212,0.2)]' 
-                  : 'border border-green-500/30 shadow-[0_0_10px_rgba(34,197,94,0.2)]'
+                  : 'border border-sky-500/30 shadow-[0_0_10px_rgba(14,165,233,0.2)]'
               }`}>
                 <h3 className="text-2xl sm:text-3xl text-foreground font-bold">Resume</h3>
                 <div className="flex items-center gap-3 mt-2">
@@ -289,7 +283,7 @@ const Contact = () => {
                     className={`text-foreground transition-all duration-300 select-text cursor-pointer ${
                       theme === 'dark' 
                         ? 'hover:text-cyan-500 underline-offset-4 decoration-cyan-500/50 hover:decoration-cyan-500' 
-                        : 'hover:text-green-500 underline-offset-4 decoration-green-500/50 hover:decoration-green-500'
+                        : 'hover:text-sky-500 underline-offset-4 decoration-sky-500/50 hover:decoration-sky-500'
                     }`}
                   >
                     View My Resume
@@ -299,7 +293,7 @@ const Contact = () => {
                     className={`p-1 rounded-lg transition-colors cursor-pointer ${
                       theme === 'dark' 
                         ? 'hover:bg-cyan-500/20' 
-                        : 'hover:bg-green-500/20'
+                        : 'hover:bg-sky-500/20'
                     }`}
                   >
                     <img src={copy} alt="copy" className="w-6 h-6" />
@@ -308,7 +302,7 @@ const Contact = () => {
                     <span className={`font-medium ${
                       theme === 'dark' 
                         ? 'text-cyan-500' 
-                        : 'text-green-500'
+                        : 'text-sky-500'
                     }`}>
                       Copied!
                     </span>
