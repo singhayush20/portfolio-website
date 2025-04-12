@@ -8,25 +8,66 @@ import { useTheme } from '../context/ThemeContext'
 
 const TechCard = ({ tech, index }) => {
   const { theme } = useTheme();
+  const colors = [
+    {
+      gradient: 'from-red-500/20 to-pink-500/20',
+      border: 'border-red-500/50 shadow-[0_0_15px_rgba(239,68,68,0.3)]',
+      glow: 'hover:shadow-[0_0_20px_rgba(239,68,68,0.4)]'
+    },
+    {
+      gradient: 'from-green-500/20 to-emerald-500/20',
+      border: 'border-green-500/50 shadow-[0_0_15px_rgba(34,197,94,0.3)]',
+      glow: 'hover:shadow-[0_0_20px_rgba(34,197,94,0.4)]'
+    },
+    {
+      gradient: 'from-blue-500/20 to-cyan-500/20',
+      border: 'border-blue-500/50 shadow-[0_0_15px_rgba(59,130,246,0.3)]',
+      glow: 'hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]'
+    },
+    {
+      gradient: 'from-purple-500/20 to-violet-500/20',
+      border: 'border-purple-500/50 shadow-[0_0_15px_rgba(168,85,247,0.3)]',
+      glow: 'hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]'
+    },
+    {
+      gradient: 'from-yellow-500/20 to-amber-500/20',
+      border: 'border-yellow-500/50 shadow-[0_0_15px_rgba(234,179,8,0.3)]',
+      glow: 'hover:shadow-[0_0_20px_rgba(234,179,8,0.4)]'
+    },
+    {
+      gradient: 'from-orange-500/20 to-red-500/20',
+      border: 'border-orange-500/50 shadow-[0_0_15px_rgba(249,115,22,0.3)]',
+      glow: 'hover:shadow-[0_0_20px_rgba(249,115,22,0.4)]'
+    }
+  ];
+  const colorIndex = index % colors.length;
+  
   return (
     <motion.div
       variants={fadeIn("right", "spring", 0.1 * index, 0.75)}
       whileHover={{ scale: 1.05 }}
-      className="relative"
+      className="relative group"
     >
-      <div className={`glass-card ${
+      <div className={`glass-card relative overflow-hidden ${
         theme === 'dark' 
-          ? 'border border-indigo-500/30 shadow-[0_0_10px_rgba(99,102,241,0.2)] hover:shadow-[0_0_15px_rgba(99,102,241,0.3)]' 
-          : 'border border-violet-500/30 shadow-[0_0_10px_rgba(139,92,246,0.2)] hover:shadow-[0_0_15px_rgba(139,92,246,0.3)]'
+          ? `border ${colors[colorIndex].border} ${colors[colorIndex].glow}` 
+          : `border ${colors[colorIndex].border} ${colors[colorIndex].glow}`
       }`}>
-        <div className="flex items-center gap-3 px-4 py-3">
-          <motion.img 
-            src={tech.icon} 
-            alt={tech.name} 
-            className="w-6 h-6"
-            whileHover={{ rotate: 360 }}
+        {/* Background gradient effect */}
+        <div className={`absolute inset-0 bg-gradient-to-r ${colors[colorIndex].gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+        
+        <div className="flex items-center gap-3 px-4 py-3 relative z-10">
+          <motion.div 
+            className={`p-2 rounded-lg ${colors[colorIndex].border} ${colors[colorIndex].glow}`}
+            whileHover={{ scale: 1.1, rotate: 360 }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
-          />
+          >
+            <img 
+              src={tech.icon} 
+              alt={tech.name} 
+              className="w-6 h-6"
+            />
+          </motion.div>
           <span className={`text-foreground font-medium ${
             theme === 'dark' ? 'text-foreground/80' : 'text-foreground/70'
           }`}>{tech.name}</span>

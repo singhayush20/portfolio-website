@@ -52,15 +52,14 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          <motion.a
-            href="#"
-            className="text-2xl font-bold flex items-center gap-2"
-            whileHover={{ scale: 1.05 }}
+          <motion.button
+            onClick={toggleTheme}
+            className="glass-card p-2 rounded-full border border-blue-500/20 hover:border-blue-500/40 transition-colors"
+            whileHover={{ scale: 1.05, rotate: 15 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="text-blue-500">AS</span>
-            <span className="text-foreground">Portfolio</span>
-          </motion.a>
+            {theme === "dark" ? "🌞" : "🌙"}
+          </motion.button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -80,14 +79,6 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <motion.button
-              onClick={toggleTheme}
-              className="glass-card p-2 rounded-full border border-blue-500/20 hover:border-blue-500/40 transition-colors"
-              whileHover={{ scale: 1.05, rotate: 15 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {theme === "dark" ? "🌞" : "🌙"}
-            </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -111,7 +102,7 @@ const Navbar = () => {
           transition={{ duration: 0.3 }}
         >
           <div className="flex flex-col p-4 gap-4">
-            <ul className="flex flex-row gap-6">
+            <ul className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <li key={link.id}>
                   <a
@@ -127,14 +118,6 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <motion.button
-              onClick={toggleTheme}
-              className="glass-card p-2 rounded-full w-fit border border-blue-500/20 hover:border-blue-500/40 transition-colors"
-              whileHover={{ scale: 1.05, rotate: 15 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {theme === "dark" ? "🌞" : "🌙"}
-            </motion.button>
           </div>
         </motion.div>
       </div>

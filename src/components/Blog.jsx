@@ -66,26 +66,28 @@ const Blog = () => {
       </motion.div>
 
       <motion.div 
-        className={`mt-4 text-[17px] leading-[30px] flex items-center ${
+        className={`mt-4 text-[17px] leading-[30px] ${
           theme === 'dark' ? 'text-foreground/80' : 'text-foreground/70'
         }`}
         variants={fadeIn("", "", 0.1, 1)}
       >
-        Explore my array of tech articles. Dive in for a deeper read. To view all, find me on{' '}
-        <motion.a 
-          href={mediumProfile} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className={`ml-2 text-foreground hover:text-primary underline-offset-4 decoration-primary/50 hover:decoration-primary transition-all duration-300 ${
-            theme === 'dark' 
-              ? 'hover:text-purple-500 decoration-purple-500/50 hover:decoration-purple-500' 
-              : 'hover:text-blue-500 decoration-blue-500/50 hover:decoration-blue-500'
-          }`}
-          whileHover={{ scale: 1.05 }}
-        >
-          Medium
-        </motion.a>
-        .
+        <p className="inline">
+          Explore my array of tech articles. Dive in for a deeper read. To view all, find me on{' '}
+          <motion.a 
+            href={mediumProfile} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={`text-foreground hover:text-primary underline-offset-4 decoration-primary/50 hover:decoration-primary transition-all duration-300 ${
+              theme === 'dark' 
+                ? 'hover:text-purple-500 decoration-purple-500/50 hover:decoration-purple-500' 
+                : 'hover:text-blue-500 decoration-blue-500/50 hover:decoration-blue-500'
+            }`}
+            whileHover={{ scale: 1.05 }}
+          >
+            Medium
+          </motion.a>
+          .
+        </p>
       </motion.div>
 
       <motion.div 

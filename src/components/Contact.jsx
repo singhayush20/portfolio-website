@@ -221,12 +221,19 @@ const Contact = () => {
               }`}>
                 <h3 className="text-2xl sm:text-3xl text-foreground font-bold tracking-wider">Email</h3>
                 <div className="flex items-center gap-3 mt-2">
-                  <p className="text-muted-foreground text-base sm:text-lg font-medium tracking-wider lowercase select-text cursor-text">
+                  <a 
+                    href={`mailto:${email}`} 
+                    className={`text-foreground transition-all duration-300 select-text cursor-pointer break-all ${
+                      theme === 'dark' 
+                        ? 'hover:text-cyan-500 underline-offset-4 decoration-cyan-500/50 hover:decoration-cyan-500' 
+                        : 'hover:text-sky-500 underline-offset-4 decoration-sky-500/50 hover:decoration-sky-500'
+                    }`}
+                  >
                     {email}
-                  </p>
+                  </a>
                   <button
                     onClick={copyToClipboard}
-                    className={`p-1 rounded-lg transition-colors cursor-pointer ${
+                    className={`p-1 rounded-lg transition-colors cursor-pointer flex-shrink-0 ${
                       theme === 'dark' 
                         ? 'hover:bg-cyan-500/20' 
                         : 'hover:bg-sky-500/20'
@@ -235,7 +242,7 @@ const Contact = () => {
                     <img src={copy} alt="copy" className="w-6 h-6" />
                   </button>
                   {emailCopied && (
-                    <span className={`font-medium ${
+                    <span className={`font-medium whitespace-nowrap ${
                       theme === 'dark' 
                         ? 'text-cyan-500' 
                         : 'text-sky-500'

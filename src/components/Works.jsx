@@ -16,6 +16,33 @@ const ProjectCard = ({
   source_links,
 }) => {
   const { theme } = useTheme();
+  const colors = [
+    {
+      gradient: 'from-red-500/20 to-pink-500/20',
+      border: 'border-red-500/50 shadow-[0_0_15px_rgba(239,68,68,0.3)]'
+    },
+    {
+      gradient: 'from-green-500/20 to-emerald-500/20',
+      border: 'border-green-500/50 shadow-[0_0_15px_rgba(34,197,94,0.3)]'
+    },
+    {
+      gradient: 'from-blue-500/20 to-cyan-500/20',
+      border: 'border-blue-500/50 shadow-[0_0_15px_rgba(59,130,246,0.3)]'
+    },
+    {
+      gradient: 'from-purple-500/20 to-violet-500/20',
+      border: 'border-purple-500/50 shadow-[0_0_15px_rgba(168,85,247,0.3)]'
+    },
+    {
+      gradient: 'from-yellow-500/20 to-amber-500/20',
+      border: 'border-yellow-500/50 shadow-[0_0_15px_rgba(234,179,8,0.3)]'
+    },
+    {
+      gradient: 'from-orange-500/20 to-red-500/20',
+      border: 'border-orange-500/50 shadow-[0_0_15px_rgba(249,115,22,0.3)]'
+    }
+  ];
+  const colorIndex = index % colors.length;
   
   return (
     <Tilt
@@ -24,15 +51,18 @@ const ProjectCard = ({
         scale: 1,
         speed: 450,
       }}
-      className='w-[95%] sm:w-[75%] md:w-[80%] elevated-card border-glow'
+      className={`w-[95%] sm:w-[75%] md:w-[80%] elevated-card group ${colors[colorIndex].border}`}
     >
       <motion.div 
         variants={fadeIn("up", "spring", index * 0.5, 0.75)}
-        className='glass-card p-6'
+        className='glass-card p-6 relative overflow-hidden'
       >
-        <div className='flex flex-col md:flex-row gap-6 items-start'>
+        {/* Background gradient effect */}
+        <div className={`absolute inset-0 bg-gradient-to-r ${colors[colorIndex].gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+        
+        <div className='flex flex-col md:flex-row gap-6 items-start relative z-10'>
           <motion.div 
-            className='glass-card p-4 flex-shrink-0 border-glow'
+            className={`glass-card p-4 flex-shrink-0 ${colors[colorIndex].border}`}
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
@@ -49,7 +79,11 @@ const ProjectCard = ({
 
           <div className='flex-1'>
             <div className='flex flex-col'>
-              <h3 className='text-foreground font-bold text-2xl gradient-text'>{name}</h3>
+              <h3 className={`text-2xl font-bold ${
+                theme === 'dark' ? 'text-foreground' : 'text-foreground/90'
+              }`}>
+                {name}
+              </h3>
               <p className='mt-2 text-muted-foreground text-sm leading-relaxed'>{description}</p>
             </div>
 
@@ -58,7 +92,7 @@ const ProjectCard = ({
                 {tags.map((tag) => (
                   <span
                     key={`${name}-${tag.name}`}
-                    className={`text-sm px-2 py-1 rounded-full glass-button border-glow ${tag.color}`}
+                    className={`text-sm px-2 py-1 rounded-full glass-button ${colors[colorIndex].border} hover:scale-105 transition-transform duration-200`}
                   >
                     #{tag.name}
                   </span>
@@ -68,7 +102,7 @@ const ProjectCard = ({
                 {source_links.map((source_link, index) => (
                   <motion.div
                     key={index}
-                    className="glass-button border-glow p-2 cursor-pointer"
+                    className={`glass-button ${colors[colorIndex].border} p-2 cursor-pointer hover:scale-110 transition-transform duration-200`}
                     whileHover={{ scale: 1.2 }}
                     transition={{ duration: 0.2 }}
                     onClick={() => window.open(source_link.link, "_blank")}
