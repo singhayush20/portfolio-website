@@ -1,0 +1,58 @@
+.vertical-timeline::before {
+  background: var(--timeline-line-color) !important;
+}
+
+.vertical-timeline-element-content {
+  box-shadow: 0 3px 0 var(--timeline-line-color) !important;
+  background: var(--card) !important;
+  color: var(--card-foreground) !important;
+}
+
+.vertical-timeline-element-content-arrow {
+  border-right: 7px solid var(--card) !important;
+}
+
+.vertical-timeline-element-icon {
+  background: var(--primary) !important;
+  box-shadow: 0 0 0 4px var(--card) !important;
+}
+
+/* Light theme styles */
+[data-theme="light"] .vertical-timeline::before {
+  --timeline-line-color: #e9ecef;
+}
+
+[data-theme="light"] .vertical-timeline-element-content {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .vertical-timeline-element-content-arrow {
+  border-right: 7px solid rgba(255, 255, 255, 0.8) !important;
+}
+
+[data-theme="light"] .vertical-timeline-element-icon {
+  background: var(--primary) !important;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Dark theme styles */
+[data-theme="dark"] .vertical-timeline::before {
+  --timeline-line-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .vertical-timeline-element-content {
+  background: rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .vertical-timeline-element-content-arrow {
+  border-right: 7px solid rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .vertical-timeline-element-icon {
+  background: var(--primary) !important;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3) !important;
+} 
