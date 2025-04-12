@@ -13,11 +13,44 @@ import appDev from "../assets/app-development.png";
 const ServiceCard = ({ index, title, icon }) => {
   const { theme } = useTheme();
   
+  // Define colors for each service
+  const getServiceColors = (theme) => [
+    {
+      border: 'border-blue-500/50',
+      glow: theme === 'dark' 
+        ? 'shadow-[0_0_15px_rgba(59,130,246,0.4)]' 
+        : 'shadow-[0_0_10px_rgba(59,130,246,0.2)]',
+      hover: theme === 'dark'
+        ? 'hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]'
+        : 'hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]'
+    },
+    {
+      border: 'border-purple-500/50',
+      glow: theme === 'dark'
+        ? 'shadow-[0_0_15px_rgba(168,85,247,0.4)]'
+        : 'shadow-[0_0_10px_rgba(168,85,247,0.2)]',
+      hover: theme === 'dark'
+        ? 'hover:shadow-[0_0_20px_rgba(168,85,247,0.5)]'
+        : 'hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]'
+    },
+    {
+      border: 'border-green-500/50',
+      glow: theme === 'dark'
+        ? 'shadow-[0_0_15px_rgba(34,197,94,0.4)]'
+        : 'shadow-[0_0_10px_rgba(34,197,94,0.2)]',
+      hover: theme === 'dark'
+        ? 'hover:shadow-[0_0_20px_rgba(34,197,94,0.5)]'
+        : 'hover:shadow-[0_0_15px_rgba(34,197,94,0.3)]'
+    }
+  ];
+  
+  const color = getServiceColors(theme)[index];
+  
   return (
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className={`glass-card p-5 rounded-2xl w-full ${
-        theme === 'dark' ? 'border-primary/30' : 'border-primary/20'
+      className={`p-5 rounded-2xl w-full border-2 ${color.border} ${color.glow} ${color.hover} transition-all duration-300 ${
+        theme === 'dark' ? 'bg-background/50' : 'bg-background/30'
       }`}
     >
       <div className="flex items-center gap-4">
