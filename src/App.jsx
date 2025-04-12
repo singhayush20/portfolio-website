@@ -17,9 +17,9 @@ const AppContent = () => {
   const { theme } = useTheme();
 
   return (
-    <div className='relative min-h-screen bg-background text-foreground'>
+    <div className='relative min-h-screen bg-background text-foreground overflow-x-hidden'>
       {/* Enhanced background with animated gradient and glow */}
-      <div className='fixed inset-0 -z-10'>
+      <div className='fixed inset-0 -z-10 overflow-hidden'>
         <div className={`absolute inset-0 ${
           theme === 'dark' 
             ? 'bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20' 
@@ -37,7 +37,7 @@ const AppContent = () => {
       <motion.div
         className={`fixed top-0 -left-4 w-72 h-72 ${
           theme === 'dark' ? 'bg-primary/15' : 'bg-primary/15'
-        } rounded-full filter blur-xl opacity-70 animate-blob`}
+        } rounded-full filter blur-xl opacity-70 animate-blob hidden md:block`}
         animate={{
           scale: [1, 1.2, 1],
           x: [0, 30, 0],
@@ -52,7 +52,7 @@ const AppContent = () => {
       <motion.div
         className={`fixed top-0 -right-4 w-72 h-72 ${
           theme === 'dark' ? 'bg-secondary/15' : 'bg-secondary/15'
-        } rounded-full filter blur-xl opacity-70 animate-blob`}
+        } rounded-full filter blur-xl opacity-70 animate-blob hidden md:block`}
         animate={{
           scale: [1, 1.2, 1],
           x: [0, -30, 0],
@@ -68,7 +68,7 @@ const AppContent = () => {
       <motion.div
         className={`fixed -bottom-8 left-20 w-72 h-72 ${
           theme === 'dark' ? 'bg-accent/15' : 'bg-accent/15'
-        } rounded-full filter blur-xl opacity-70 animate-blob`}
+        } rounded-full filter blur-xl opacity-70 animate-blob hidden md:block`}
         animate={{
           scale: [1, 1.2, 1],
           x: [0, 20, 0],
@@ -140,7 +140,7 @@ const AppContent = () => {
       <motion.div
         className={`fixed top-0 right-0 w-96 h-96 ${
           theme === 'dark' ? 'bg-orange-500/20' : 'bg-orange-400/25'
-        } rounded-full filter blur-3xl opacity-70 animate-blob`}
+        } rounded-full filter blur-3xl opacity-70 animate-blob hidden md:block`}
         animate={{
           scale: [1, 1.4, 1.1, 1],
           x: [0, -80, 60, 0],
@@ -178,7 +178,7 @@ const AppContent = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
-          className="relative z-10"
+          className="relative z-10 overflow-x-hidden"
         >
           <Hero />
           <About />
