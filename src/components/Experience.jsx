@@ -100,7 +100,11 @@ const Experience = () => {
       className='relative z-0'
       data-theme={theme}
     >
-      <motion.div variants={textVariant()}>
+      <motion.div 
+        variants={textVariant()}
+        initial="hidden"
+        animate="show"
+      >
         <p className={`${styles.sectionSubText} ${
           theme === 'dark' ? 'text-primary/80' : 'text-primary'
         }`}>What I have done so far</p>
@@ -111,6 +115,8 @@ const Experience = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
+        initial="hidden"
+        animate="show"
         className={`mt-4 text-[17px] max-w-full leading-[30px] ${
           theme === 'dark' ? 'text-foreground/80' : 'text-foreground/70'
         }`}

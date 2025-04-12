@@ -134,7 +134,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              A passionate Full Stack Developer with expertise in building modern web applications.
+              A passionate Software Engineer with a knack for learning and building new things.
             </motion.p>
             <motion.div
               className="flex justify-center lg:justify-start gap-4 mb-8 md:mb-12"

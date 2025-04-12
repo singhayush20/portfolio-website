@@ -189,6 +189,18 @@ const blogs = [
 
 const experiences = [
   {
+    title: "SDE-1",
+    company_name: "Refyne India",
+    icon: Icons.work1,
+    iconBg: "#383E56",
+    date: "Jan 2025 - Present",
+    points: [
+      "Working on developing new product features as per the product requirements.",
+      "Maintaining existing codebase, fixing bugs and improving code quality. Working on enhancement tasks to improve app performance and user experience.",
+      "Writing and modifying CI/CD scripts for seamless delivery of features to QA.",
+    ],
+  },
+  {
     title: "Flutter Mobile Application Development Intern",
     company_name: "Refyne India",
     icon: Icons.work2,

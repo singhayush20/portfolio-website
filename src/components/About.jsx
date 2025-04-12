@@ -90,7 +90,7 @@ const About = () => {
         }`}
         variants={fadeIn("", "", 0.1, 1)}
       >
-        A committed, self-driven learner with a passion for technology. A collaborative team player who excels in working toward shared goals. Experienced in backend development with Spring Boot and Java, currently working on Flutter mobile application development.
+        A committed, self-driven learner with a passion for technology. A collaborative team player who excels in working toward shared goals.
       </motion.p>
 
       <motion.div 
@@ -101,16 +101,16 @@ const About = () => {
       >
         {[
           {
-            title: "Web Development",
-            icon: frontend,
+            title: "Backend Development",
+            icon: backend,
           },
           {
-            title: "Mobile Development",
+            title: "Mobile App Development",
             icon: appDev,
           },
           {
-            title: "Backend Development",
-            icon: backend,
+            title: "Frontend Web Development",
+            icon: frontend,
           },
         ].map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
