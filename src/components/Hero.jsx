@@ -124,7 +124,7 @@ const Hero = () => {
                   wrapper="span"
                   speed={30}
                   repeat={Infinity}
-                  className="inline-block"
+                  className={`inline-block ${theme === 'dark' ? 'text-blue-500' : 'text-blue-500'}`}
                 />
               </span>
             </motion.h1>
