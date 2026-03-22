@@ -1,4 +1,7 @@
 import logo from "./logo.svg";
+import springai from "./tech/springai.png";
+import langchain from "./tech/langchain.svg";
+import langgraph from "./tech/langgraph.svg";
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
@@ -43,6 +46,9 @@ import medium from './medium.svg'
 import copy from './copy.png'
 import link from './link.png'
 export {
+  springai,
+  langchain,
+  langgraph,
   android,
   aws,
   azure,

@@ -30,16 +30,12 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Backend Web Developement",
+    title: "Backend Developement",
     icon: Icons.backend2,
   },
   {
-    title: "Mobile App Developement",
+    title: "Flutter App Developement",
     icon: Icons.app_development,
-  },
-  {
-    title: "Frontend Web Development",
-    icon: Icons.frontend,
   },
 ];
 
@@ -55,6 +51,10 @@ const technologies = [
   {
     name: "Spring Boot",
     icon: Icons.springboot
+  },
+  {
+    name: "Spring AI",
+    icon: Icons.springai
   },
   {
     name: "Hibernate",
@@ -85,36 +85,8 @@ const technologies = [
     icon: Icons.dart
   },
   {
-    name: "Android",
-    icon: Icons.android
-  },
-  {
     name: "Firebase",
     icon: Icons.firebase
-  },
-  {
-    name: "JavaScript",
-    icon: Icons.javascript
-  },
-  {
-    name: "Tailwind CSS",
-    icon: Icons.tailwind
-  },
-  {
-    name: "React.js",
-    icon: Icons.reactjs
-  },
-  {
-    name: 'Redux',
-    icon: Icons.redux
-  },
-  {
-    name: "HTML",
-    icon: Icons.html
-  },
-  {
-    name: "CSS",
-    icon: Icons.css
   },
   {
     name: "MongoDB",
@@ -123,6 +95,14 @@ const technologies = [
   {
     name: "Python",
     icon: Icons.python
+  },
+  {
+    name: "LangChain",
+    icon: Icons.langchain
+  },
+  {
+    name: "LangGraph",
+    icon: Icons.langgraph
   },
   {
     name: "AWS",
@@ -195,9 +175,10 @@ const experiences = [
     iconBg: "#383E56",
     date: "Jan 2025 - Present",
     points: [
-      "Working on developing new product features as per the product requirements.",
-      "Maintaining existing codebase, fixing bugs and improving code quality. Working on enhancement tasks to improve app performance and user experience.",
-      "Writing and modifying CI/CD scripts for seamless delivery of features to QA.",
+     "Implemented caching for HTTP 304 status codes to prevent re-fetching the unchanged data and reduce data transfer.",
+     "Worked on re-writing CI/CD workflows for delivering iOS and Android app builds, fixing code duplication, re-writing legacy workflow, and helping reduce build deployment times.",
+     "Worked on implementing in-app infra for Video KYC and redesigning the salary withdrawal flow, which helped reduce infra cost and improve user engagement.",
+     "Worked on developing the in-app support feature using a chat sdk. This enables users to track there open queries, get faster resolutions and reduce the TAT for query resolution."
     ],
   },
   {
@@ -253,6 +234,56 @@ const experiences = [
 
 const projects = [
   {
+    name: "DocuHelper",
+    description:
+      "A mobile application that uses RAG-based workflows to implement document utility features. Some of the features are document chat, summarizer, subscription/plan-based user accounts, configurable UI with versioning, and config-based UI components.",
+    tags: [
+      {
+        name: "springboot",
+        color: "green-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "postgresql",
+        color: "green-text-gradient",
+      },
+      {
+        name: "redis",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "spring ai",
+        color: "green-text-gradient",
+      },
+      {
+        name: "ollama",
+        color: "pink-text-gradientt",
+      },
+      {
+        name: "gemini",
+        color: "green-text-gradient",
+      },
+      {
+        name: "flutter",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: Icons.carrent,
+    source_links: [
+      {
+        link: 'https://github.com/singhayush20/doc_helper_backend',
+        icon: Icons.project_backend
+      },
+      {
+        link: 'https://github.com/singhayush20/doc_helper_app',
+        icon: Icons.project_mobile
+      }
+    ]
+  },
+  {
     name: "Municipal Hub",
     description:
       "A mobile+web based project which provides a digital means to connect consumers with the municipal services. Consumers can access the services using a Mobile App and the corportation can use the web-based app.",
@@ -286,66 +317,6 @@ const projects = [
       }
     ]
   },
-  {
-    name: "Connect",
-    description:
-      "A mobile based blogging application. It enables users to right blogs and subscribe to topics of their interest. Users can also comment on other users' blogs. Users get notified for new articles in topics of their interest",
-    tags: [
-      {
-        name: "flutter",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "spring-boot",
-        color: "green-text-gradient",
-      },
-      {
-        name: 'mysql',
-        color: 'pink-text-gradient'
-      }
-    ],
-    image: Icons.jobit,
-    source_links: [
-      {
-        link: 'https://github.com/singhayush20/blogging-application',
-        icon: Icons.project_backend
-      },
-      {
-        link: 'https://github.com/singhayush20/blog_app',
-        icon: Icons.project_mobile
-      },
-    ]
-  },
-  {
-    name: "Quizzo",
-    description:
-      "A mobile based assessment application for educators. Educators can create subjects, quizzes, update live-status and check past records. Students can enroll in a subject and take assessments and view history.",
-    tags: [
-      {
-        name: "flutter",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "spring-boot",
-        color: "green-text-gradient",
-      },
-      {
-        name: 'mysql',
-        color: 'pink-text-gradient'
-      }
-    ],
-    image: Icons.tripguide,
-    source_links: [
-      {
-        link: 'https://github.com/singhayush20/assessment-portal',
-        icon: Icons.project_backend
-      },
-      {
-        link: 'https://github.com/singhayush20/Assessment-Portal-App',
-        icon: Icons.project_mobile
-      }
-    ]
-  },
 ];
 
 
@@ -372,7 +343,7 @@ const socials = [
   }
 ]
 
-const email = "ayushsingh20april@gmail.com"
+const email = "ayush.singh20apr@gmail.com"
 const resumeLink = "https://drive.google.com/drive/folders/1r3FGjpOOjEqKP00cHCVUvlUJ_89yV9wX?usp=sharing"
 const mediumProfile = "https://medium.com/@aprayush20"
 export { socials, services, technologies, experiences, projects, email, mediumProfile, resumeLink, blogs };

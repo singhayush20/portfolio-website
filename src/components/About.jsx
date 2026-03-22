@@ -90,7 +90,7 @@ const About = () => {
         }`}
         variants={fadeIn("", "", 0.1, 1)}
       >
-        A committed, self-driven learner with a passion for technology. A collaborative team player who excels in working toward shared goals.
+        A committed, self-driven learner with a passion for technology and continuous growth. A collaborative team player who thrives on achieving shared goals. Experienced in backend development and mobile application development.
       </motion.p>
 
       <motion.div 
@@ -107,10 +107,6 @@ const About = () => {
           {
             title: "Mobile App Development",
             icon: appDev,
-          },
-          {
-            title: "Frontend Web Development",
-            icon: frontend,
           },
         ].map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
