@@ -20,22 +20,22 @@ import frontend from './frontend.png';
 import work1 from './work1.png';
 import work2 from './work2.png'
 import android from './tech/android.png';
-import aws from './tech/aws.png'
-import azure from './tech/azure.svg';
 import dart from './tech/dart.svg';
 import firebase from './tech/firebase.svg';
 import flutter from './tech/flutter.svg';
 import hibernate from './tech/hibernate.svg';
 import java from './tech/java.svg';
 import mysql from './tech/mysql.png';
-import oracle from './tech/oracle.png';
 import postgres from './tech/postgres.png';
-import python from './tech/python.svg';
 import spring from './tech/spring.svg';
 import springboot from './tech/springboot.png';
 import swagger from './tech/swagger.png';
 import redis from './tech/redis.svg';
 import postman from './tech/postman.svg';
+import nestjs from './tech/nestjs.svg';
+import typescript from './tech/typescript.svg';
+import aisdk from './tech/ai-sdk.jpg';
+import fastlane from './fastlane.png';
 import project_frontend from './project_frontend.png'
 import project_backend from './project_backend.png'
 import project_mobile from './project_mobile.png'
@@ -50,22 +50,22 @@ export {
   langchain,
   langgraph,
   android,
-  aws,
-  azure,
   dart,
   firebase,
   flutter,
   hibernate,
   java,
   mysql,
-  oracle,
   postgres,
-  python,
   spring,
   springboot,
   swagger,
   redis,
   postman,
+  nestjs,
+  typescript,
+  aisdk,
+  fastlane,
   logo,
   github,
   link,

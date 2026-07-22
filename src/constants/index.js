@@ -69,10 +69,6 @@ const technologies = [
     icon: Icons.postgres
   },
   {
-    name: "SQL",
-    icon: Icons.oracle
-  },
-  {
     name: "Redis",
     icon: Icons.redis
   },
@@ -93,24 +89,12 @@ const technologies = [
     icon: Icons.mongodb
   },
   {
-    name: "Python",
-    icon: Icons.python
-  },
-  {
     name: "LangChain",
     icon: Icons.langchain
   },
   {
     name: "LangGraph",
     icon: Icons.langgraph
-  },
-  {
-    name: "AWS",
-    icon: Icons.aws
-  },
-  {
-    name: "Microsoft Azure",
-    icon: Icons.azure
   },
   {
     name: "Docker",
@@ -123,6 +107,22 @@ const technologies = [
   {
     name: "Swagger",
     icon: Icons.swagger
+  },
+  {
+    name: "NestJS",
+    icon: Icons.nestjs
+  },
+  {
+    name: "TypeScript",
+    icon: Icons.typescript
+  },
+  {
+    name: "Fastlane",
+    icon: Icons.fastlane
+  },
+  {
+    name: "AI SDK",
+    icon: Icons.aisdk
   }
 ];
 
@@ -234,6 +234,60 @@ const experiences = [
 
 const projects = [
   {
+    name: "CodeSense",
+    description:
+      "An AI-powered code review platform that uses 'Bring Your Own Key' model for LLM integration. It integrates with GitHub repositories and automatically reviews pull requests to detect code quality issues, security risks, and bad practices. Implemented an event-driven review pipeline where GitHub pull request events trigger asynchronous processing to fetch changed files and publish automated review comments directly on pull requests with proper authorization and user isolation.",
+    tags: [
+      {
+        name: "nestjs",
+        color: "green-text-gradient",
+      },
+      {
+        name: "postgresql",
+        color: "green-text-gradient",
+      },
+      {
+        name: "redis",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "google oauth",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "github apps",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "bullmq",
+        color: "green-text-gradient",
+      },
+      {
+        name: "grafana",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "open telemetry",
+        color: "green-text-gradient",
+      },
+      {
+        name: "ai sdk",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: Icons.carrent,
+    source_links: [
+      {
+        link: 'https://github.com/singhayush20/codesense-backend',
+        icon: Icons.project_backend
+      },
+      {
+        link: 'https://codesense-frontend-two.vercel.app/',
+        icon: Icons.project_frontend
+      }
+    ]
+  },
+  {
     name: "DocuHelper",
     description:
       "A mobile application that uses RAG-based workflows to implement document utility features. Some of the features are document chat, summarizer, subscription/plan-based user accounts, configurable UI with versioning, and config-based UI components.",
@@ -279,40 +333,6 @@ const projects = [
       },
       {
         link: 'https://github.com/singhayush20/doc_helper_app',
-        icon: Icons.project_mobile
-      }
-    ]
-  },
-  {
-    name: "Municipal Hub",
-    description:
-      "A mobile+web based project which provides a digital means to connect consumers with the municipal services. Consumers can access the services using a Mobile App and the corportation can use the web-based app.",
-    tags: [
-      {
-        name: "reactjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "springboot",
-        color: "green-text-gradient",
-      },
-      {
-        name: "flutter",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: Icons.carrent,
-    source_links: [
-      {
-        link: 'https://github.com/singhayush20/cacmp_frontend',
-        icon: Icons.project_frontend
-      },
-      {
-        link: 'https://github.com/singhayush20/cacmp_backend',
-        icon: Icons.project_backend
-      },
-      {
-        link: 'https://github.com/singhayush20/cacmp_app',
         icon: Icons.project_mobile
       }
     ]
